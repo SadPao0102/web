@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Player Profile</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+/* 🔥 เพิ่ม effect เล็กๆ */
+.ppg {
+    transition: 0.3s;
+    font-weight: bold;
+    color: #e63946;
+}
+
+.btn-reset {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 18px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+
 </head>
 
 <body>
@@ -14,7 +35,7 @@
     <div class="card">
         <h1>🏀 Player Profile</h1>
 
-        <img src="C:\Users\thany\OneDrive\เอกสาร\S__2629643.jpg" alt="player" class="profile-img">
+        <img src="image/S__2629643.jpg" alt="player" class="profile-img">
 
         <div class="info">
             <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
@@ -28,50 +49,95 @@
     <div class="stats">
         <h2 class="section-title">📊 Season Stats</h2>
 
+        <!-- 🔥 ปุ่ม -->
+        <button onclick="calculatePPG()" class="btn-calc">
+            🔥 Calculate PPG
+        </button>
+
+        <button onclick="resetPPG()" class="btn-reset">
+            Reset
+        </button>
+
         <div class="stats-container">
+
         <!-- Freshman -->
         <div class="stat-card">
             <h3>Freshman Year</h3>
-            <table>
+            <table class="score-table">
                 <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td>18</td></tr>
-                <tr><td>G2</td><td>41</td></tr>
-                <tr><td>G3</td><td>26</td></tr>
-                <tr><td>G4</td><td>32</td></tr>
-                <tr><td>G5</td><td>20</td></tr>
-                <tr class="highlight"><td>PPG</td><td>27.4</td></tr>
+                <tr><td>G1</td><td class="point">18</td></tr>
+                <tr><td>G2</td><td class="point">41</td></tr>
+                <tr><td>G3</td><td class="point">26</td></tr>
+                <tr><td>G4</td><td class="point">32</td></tr>
+                <tr><td>G5</td><td class="point">20</td></tr>
+                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
             </table>
         </div>
 
         <!-- Sophomore -->
         <div class="stat-card">
             <h3>Sophomore Year</h3>
-            <table>
+            <table class="score-table">
                 <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td>17</td></tr>
-                <tr><td>G2</td><td>28</td></tr>
-                <tr><td>G3</td><td>22</td></tr>
-                <tr><td>G4</td><td>33</td></tr>
-                <tr><td>G5</td><td>24</td></tr>
-                <tr class="highlight"><td>PPG</td><td>24.8</td></tr>
+                <tr><td>G1</td><td class="point">17</td></tr>
+                <tr><td>G2</td><td class="point">28</td></tr>
+                <tr><td>G3</td><td class="point">22</td></tr>
+                <tr><td>G4</td><td class="point">33</td></tr>
+                <tr><td>G5</td><td class="point">24</td></tr>
+                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
             </table>
         </div>
 
         <!-- Junior -->
         <div class="stat-card">
             <h3>Junior Year</h3>
-            <table>
+            <table class="score-table">
                 <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td>19</td></tr>
-                <tr><td>G2</td><td>30</td></tr>
-                <tr><td>G3</td><td>16</td></tr>
-                <tr class="highlight"><td>PPG</td><td>21.7</td></tr>
+                <tr><td>G1</td><td class="point">19</td></tr>
+                <tr><td>G2</td><td class="point">30</td></tr>
+                <tr><td>G3</td><td class="point">16</td></tr>
+                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
             </table>
         </div>
 
     </div>
 
 </div>
+
+<!-- JavaScript -->
+<script>
+function calculatePPG() {
+    const tables = document.querySelectorAll(".score-table");
+
+    tables.forEach(table => {
+        let points = table.querySelectorAll(".point");
+        let sum = 0;
+
+        points.forEach(p => {
+            sum += parseInt(p.innerText) || 0;
+        });
+
+        let avg = (sum / points.length).toFixed(1);
+
+        let ppgCell = table.querySelector(".ppg");
+        ppgCell.innerText = avg;
+
+        // 🔥 animation นิดๆ
+        ppgCell.style.transform = "scale(1.2)";
+        setTimeout(() => {
+            ppgCell.style.transform = "scale(1)";
+        }, 200);
+    });
+}
+
+// 🔥 ปุ่มรีเซ็ต
+function resetPPG() {
+    const ppgs = document.querySelectorAll(".ppg");
+    ppgs.forEach(p => {
+        p.innerText = "-";
+    });
+}
+</script>
 
 </body>
 </html>

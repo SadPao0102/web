@@ -114,3 +114,49 @@ td:hover {
         grid-template-columns: 1fr;
     }
 }
+.btn-calc {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-calc:hover {
+    background: #c1121f;
+    transform: scale(1.05);
+}
+
+.btn-reset {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 18px;
+    background: white;
+    color: #e63946;
+    border: 2px solid #e63946;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-reset:hover {
+    background: #e63946;
+    color: white;
+}
+.profile-img {
+    width: 400px;
+    border-radius: 15px;
+    margin: 15px 0;
+    border: 3px solid white;
+    transition: 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
