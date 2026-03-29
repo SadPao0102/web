@@ -25,8 +25,9 @@ body {
 }
 
 .profile-img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
+    height: 300px; 
+    object-fit: cover;
     border-radius: 15px;
     margin: 15px 0;
     border: 3px solid white;
@@ -59,7 +60,7 @@ body {
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .stat-card:hover {
@@ -118,7 +119,7 @@ td:hover {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .btn-calc:hover {
@@ -135,7 +136,7 @@ td:hover {
     border: 2px solid #e63946;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .btn-reset:hover {
@@ -147,9 +148,10 @@ td:hover {
     border-radius: 15px;
     margin: 15px 0;
     border: 3px solid white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .profile-img:hover {
     transform: scale(1.05);
 }
+
