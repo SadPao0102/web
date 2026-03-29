@@ -26,7 +26,7 @@ body {
 
 .profile-img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 15px;
     margin: 15px 0;
     border: 3px solid white;
@@ -111,7 +111,7 @@ td:hover {
     display: block;
     margin: 20px auto;
     padding: 12px 20px;
-    background: #c1121f; 
+    background: #b00020; 
     color: #ffffff;
     border: none;
     border-radius: 12px;

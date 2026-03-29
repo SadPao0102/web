@@ -55,3 +55,35 @@ function calculatePPG() {
 
     document.getElementById("ppg").innerText = "PPG: " + avg;
 }
+
+function calculatePPG() {
+    const tables = document.querySelectorAll(".score-table");
+
+    tables.forEach(table => {
+        let points = table.querySelectorAll(".point");
+        let sum = 0;
+
+        points.forEach(p => {
+            sum += parseInt(p.innerText) || 0;
+        });
+
+        let avg = (sum / points.length).toFixed(1);
+
+        let ppgCell = table.querySelector(".ppg");
+        ppgCell.innerText = avg;
+
+        // 🔥 animation นิดๆ
+        ppgCell.style.transform = "scale(1.2)";
+        setTimeout(() => {
+            ppgCell.style.transform = "scale(1)";
+        }, 200);
+    });
+}
+
+// 🔥 ปุ่มรีเซ็ต
+function resetPPG() {
+    const ppgs = document.querySelectorAll(".ppg");
+    ppgs.forEach(p => {
+        p.innerText = "-";
+    });
+}
