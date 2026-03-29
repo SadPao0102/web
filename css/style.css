@@ -1,8 +1,9 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+     font-family: 'Poppins', sans-serif;
     background: #f1f1f1;
     color: #333;
+    font-size: 20px;
 }
 
 /* Container */
@@ -14,8 +15,8 @@ body {
 
 /* Profile Card */
 .card {
-    background: linear-gradient(135deg, #e63946, #ff6b6b);
-    color: white;
+    background: linear-gradient(135deg, #c1121f, #e63946);
+    color: #ffffff;
     border-radius: 20px;
     padding: 25px;
     text-align: center;
@@ -24,7 +25,8 @@ body {
 }
 
 .profile-img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     border-radius: 15px;
     margin: 15px 0;
     border: 3px solid white;
@@ -41,7 +43,7 @@ body {
     text-align: center;
     font-size: 26px;
     margin-bottom: 20px;
-    color: #e63946;
+    color: #a10f1a;
 }
 
 /* Grid Layout */
@@ -72,7 +74,7 @@ table {
 }
 
 th {
-    background: #e63946;
+    background: #a10f1a;
     color: white;
 }
 
@@ -87,7 +89,7 @@ tr:nth-child(even) {
 
 /* Highlight PPG */
 .highlight {
-    background: #ffe5e7;
+    background: #ffccd0;
     font-weight: bold;
 }
 
@@ -97,16 +99,7 @@ td:hover {
     cursor: pointer;
 }
 
-/* Badge */
-.badge {
-    background: white;
-    color: #e63946;
-    padding: 5px 10px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: bold;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -118,8 +111,8 @@ td:hover {
     display: block;
     margin: 20px auto;
     padding: 12px 20px;
-    background: #e63946;
-    color: white;
+    background: #c1121f; 
+    color: #ffffff;
     border: none;
     border-radius: 12px;
     font-size: 16px;
