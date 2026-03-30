@@ -154,10 +154,12 @@ td:hover {
 
 
 /* cv page only */
+/* cv page only */
 .cv-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box; /* ป้องกันขนาดการ์ดล้นหน้าจอ */
 }
 
 .cv-navbar {
@@ -167,6 +169,7 @@ td:hover {
     padding: 10px;
     border-radius: 12px;
     margin-bottom: 20px;
+    gap: 10px; /* เพิ่มระยะห่างระหว่างเมนู */
 }
 
 .cv-navbar a {
@@ -174,7 +177,8 @@ td:hover {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-size: 18px;
 }
 
 /* hover */
@@ -183,46 +187,69 @@ td:hover {
     color: #a10f1a;
 }
 
-/* tab ที่ active */
-.cv-active {
-    color: #a10f1a;
-    font-weight: bold;
-}
+
 
 .cv-card, .cv-section {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-
-    /* 🔥 กรอบแดง */
+    padding: 25px; /* เพิ่ม padding อีกนิดให้ดูโปร่ง */
+    margin-bottom: 25px;
+    border-radius: 20px; /* มนขึ้นให้เข้ากับสไตล์ Modern */
     border: 2px solid #a10f1a;
-
-    /* เงา */
-    box-shadow: 0 5px 15px rgba(230,57,70,0.2);
+    box-shadow: 0 8px 20px rgba(161, 15, 26, 0.15); /* ปรับเงาให้นุ่มนวลขึ้น */
 }
 
 .cv-profile-img {
-    width: 150px;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
     border-radius: 50%;
     display: block;
-    margin: 10px auto;
+    margin: 0 auto 15px auto;
+    border: 4px solid #a10f1a;
+    transition: transform 0.3s ease;
+}
+
+.cv-profile-img:hover {
+    transform: scale(1.05); /* เพิ่มลูกเล่นตอน hover รูปโปรไฟล์ */
 }
 
 .cv-info {
     text-align: center;
+    line-height: 1.8; /* เพิ่มระยะบรรทัดให้อ่านง่าย */
 }
 
 .cv-title {
     color: #a10f1a;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffccd0; /* เพิ่มเส้นใต้หัวข้อให้ดูแยกเป็นสัดส่วน */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .cv-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
     list-style: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 .cv-skill-list li {
-    padding: 8px 0;
+    background: #fff5f5; /* พื้นหลังแดงระเรื่อ */
+    border: 1px solid #a10f1a;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #a10f1a;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: default;
+}
+
+.cv-skill-list li:hover {
+    background: #a10f1a;
+    color: white;
+    transform: translateY(-2px);
 }
