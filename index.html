@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <meta name="description" content="หน้าแรก - ธัญเทพ หาญกล้า ยินดีต้อนรับสู่พอร์ตโฟลิโอวิศวกรรมและบาสเกตบอล">
+    <title>Home | Thanyathep Hankla</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-<header>
-    <h1>My Personal Website</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cv.html">CV</a>
-        <a href="js-page.html">JavaScript</a>
+    <nav class="cv-navbar">
+        <a href="index.html" class="cv-active">🏠 Home</a>
+        <a href="cv.html">👤 About</a>
+        <a href="js-page.html">🏀 Basketball Stats</a>
     </nav>
-</header>
 
-<main>
-    <section>
-        <h2>Welcome</h2>
-        <p>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</p>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h2>Welcome to my world</h2>
+                <h1>I'm <span class="highlight">Thanyathep</span></h1>
+                <p class="typing" id="typewriter"></p>
+                
+                <div class="btn-group">
+                    <a href="cv.html" class="btn btn-red">Explore CV</a>
+                    <a href="js-page.html" class="btn btn-outline">My Stats</a>
+                </div>
+            </div>
+
+            <div class="hero-img-wrapper">
+                <img src="image/S__2646043.webp" alt="Thanyathep Hankla">
+            </div>
+        </div>
     </section>
-</main>
 
-<footer>
-    <p>© 2026 My Website</p>
-</footer>
-
+    <script src="js/home.js"></script>
 </body>
 </html>
