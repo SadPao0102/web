@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile | Pink Edition</title>
+    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/stats-pink.css"> <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="pink-theme-body">
+
+    <header class="cv-navbar">
+    <nav class="cv-navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="cv.html" class="cv-active">👤 About</a>
+        <a href="js-page.html">🏀 Chalke Game Stats</a>
+        <a href="js-page2.html">🏀 KhaeSad Game Stats</a>
+ 
+    </nav>
+</header>
+
+    <div class="pink-container">
+        <header class="pink-profile-card">
+            <h1 class="pink-main-title">🏀 Player Profile</h1>
+            <div class="pink-profile-flex">
+                <div class="pink-img-box">
+                    <img src="image/S__2768900.webp" alt="Player Profile" class="pink-img">
+                </div>
+                <div class="pink-details">
+                    <p><strong>Name:</strong> Thanyathep Hankla</p>
+                    <p><strong>No:</strong> 6</p>
+                    <p><strong>คณะ:</strong> SIET </p>
+                    <p><strong>Position:</strong> G-F</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="pink-stats-section">
+            <h2 class="pink-section-title"> KhaeSad Stat</h2>
+
+            <div class="pink-button-group">
+                <button onclick="calcPinkPPG()" class="btn-pink-calc">💖 Calculate PPG</button>
+                <button onclick="resetPinkPPG()" class="btn-pink-reset">Reset</button>
+            </div>
+
+            <div class="pink-grid">
+                <div class="pink-stat-card">
+                    <h3>Freshman Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>G1</td><td class="pink-pt">8</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">1</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">15</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="pink-stat-card">
+                    <h3>Sophomore Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>G1</td><td class="pink-pt">36</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">9</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">22</td></tr>
+                            <tr><td>G4</td><td class="pink-pt">11</td></tr>
+                            <tr><td>G5</td><td class="pink-pt">14</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="pink-stat-card">
+                    <h3>Junior Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>G1</td><td class="pink-pt">20</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">18</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">19</td></tr>
+                            <tr><td>G4</td><td class="pink-pt">20</td></tr>
+                            <tr><td>G5</td><td class="pink-pt">15</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/stats-pink.js"></script>
+</body>
+</html>

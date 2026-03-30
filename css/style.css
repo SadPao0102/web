@@ -394,3 +394,145 @@ td:hover {
         max-width: 280px;
     }
 }
+
+
+
+
+/* Pink & White Theme Specific */
+.pink-theme-body {
+    background-color: #fff5f7; /* พื้นหลังชมพูอ่อนมาก */
+    color: #4a4a4a;
+}
+
+.pink-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Profile Card */
+.pink-profile-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+    border: 2px solid #ffdae0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pink-main-title {
+    color: #ff4d6d;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.pink-profile-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.pink-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* ทรงกลมเข้ากับธีมชมพู */
+    object-fit: cover;
+    border: 5px solid #ffccd5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pink-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: left;
+    color: #5f5f5f;
+    border-bottom: 1px dashed #ffccd5;
+    padding-bottom: 5px;
+}
+
+/* Stats Section */
+.pink-section-title {
+    text-align: center;
+    color: #ff4d6d;
+    margin-bottom: 30px;
+}
+
+.pink-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.btn-pink-calc {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.btn-pink-reset {
+    background: white;
+    color: #ff4d6d;
+    border: 2px solid #ff4d6d;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.btn-pink-calc:hover { background: #ff758f; transform: scale(1.05); }
+
+/* Stats Cards */
+.pink-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.pink-stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #ffdae0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.pink-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.pink-table th {
+    border-bottom: 2px solid #ffccd5;
+    padding: 10px;
+    color: white;
+    background: #ff4d6d
+}
+
+.pink-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #fff0f3;
+}
+
+.pink-res-row {
+    background: #fff0f3;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .pink-profile-flex { gap: 20px; }
+    .pink-main-title { font-size: 2.2rem; }
+}
