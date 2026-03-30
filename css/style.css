@@ -219,11 +219,11 @@ td:hover {
 }
 
 .cv-title {
-    color: #a10f1a;
+   color: #a10f1a;
     margin-bottom: 15px;
-    border-bottom: 2px solid #ffccd0; /* เพิ่มเส้นใต้หัวข้อให้ดูแยกเป็นสัดส่วน */
-    display: inline-block;
-    padding-bottom: 5px;
+    border-left: 5px solid #a10f1a;
+    padding-left: 10px;
+    text-align: left;
 }
 
 .cv-skill-list {
