@@ -1,6 +1,6 @@
 body {
     margin: 0;
-     font-family: 'Poppins', sans-serif;
+     font-family: 'Irish Grover', cursive;
     background: #f1f1f1;
     color: #333;
     font-size: 20px;
@@ -151,3 +151,78 @@ td:hover {
     transform: scale(1.05);
 }
 
+
+
+/* cv page only */
+.cv-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.cv-navbar {
+    display: flex;
+    justify-content: center;
+    background: #a10f1a;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.cv-navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* hover */
+.cv-navbar a:hover {
+    background: white;
+    color: #a10f1a;
+}
+
+/* tab ที่ active */
+.cv-active {
+    color: #a10f1a;
+    font-weight: bold;
+}
+
+.cv-card, .cv-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+
+    /* 🔥 กรอบแดง */
+    border: 2px solid #a10f1a;
+
+    /* เงา */
+    box-shadow: 0 5px 15px rgba(230,57,70,0.2);
+}
+
+.cv-profile-img {
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 10px auto;
+}
+
+.cv-info {
+    text-align: center;
+}
+
+.cv-title {
+    color: #a10f1a;
+    margin-bottom: 10px;
+}
+
+.cv-skill-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cv-skill-list li {
+    padding: 8px 0;
+}
