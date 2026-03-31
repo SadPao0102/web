@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pool Pro</title>
+    <title>Pool Pro | Thanyathep</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">
 </head>
-<body class="pool-page"> <header class="main-navbar-wrapper1">
-        <nav class="cv-navbar1">
+<body class="pool-page"> 
+    <header class="main-navbar-wrapper">
+        <nav class="cv-navbar">
             <a href="index.html">🏠 Home</a>
             <a href="cv.html">👤 About</a>
-            <a href="js-page.html">🏀 Chalke Games</a>
-            <a href="js-page2.html">🏀 KhaeSad Stats</a>
+            <a href="js-page.html">🏀 Chalke</a>
+            <a href="js-page2.html">🏀 KhaeSad</a>
             <a href="game.html" class="cv-active" aria-current="page">🎱 Play Pool</a>
         </nav>
     </header>
@@ -20,14 +22,39 @@
         <h1>🎱 POOL 8 BALL</h1>
 
         <div class="hud">
-            <div>Turn: <span id="turn">Player</span></div>
-            <div>Player: <span id="playerGroup">-</span></div>
-            <div>Bot: <span id="botGroup">-</span></div>
+            <div class="hud-item">Turn: <span id="turn">PLAYER</span></div>
+            <div class="hud-item">Player: <span id="playerGroup">-</span></div>
+            <div class="hud-item">Bot: <span id="botGroup">-</span></div>
         </div>
 
-        <canvas id="game" width="900" height="450"></canvas>
+        <div class="canvas-wrapper">
+            <canvas id="game" width="900" height="450"></canvas>
+        </div>
 
-        <button onclick="resetGame()">Reset</button>
+        <div class="controls-area">
+            <button class="btn-reset" onclick="resetGame()">🔄 Reset Game</button>
+        </div>
+
+        <section class="instructions">
+            <h3>🎮 วิธีการเล่น (How to Play)</h3>
+            <div class="instruction-grid">
+                <div class="inst-card">
+                    <span class="icon">🖱️</span>
+                    <h4>สำหรับคอมพิวเตอร์</h4>
+                    <p>คลิกเมาส์ค้างที่ <strong>ลูกขาว</strong> แล้วลากถอยหลังเพื่อเล็งแรงยิง จากนั้นปล่อยเมาส์เพื่อแทง</p>
+                </div>
+                <div class="inst-card">
+                    <span class="icon">📱</span>
+                    <h4>สำหรับมือถือ</h4>
+                    <p>ใช้นิ้วแตะค้างที่หน้าจอแล้ว <strong>ลากสวนทาง</strong> กับทิศทางที่จะยิง (ยิ่งลากไกลแรงยิ่งเยอะ)</p>
+                </div>
+                <div class="inst-card">
+                    <span class="icon">🏆</span>
+                    <h4>กติกา</h4>
+                    <p>สลับกันแทงลูกสีของตนเองให้ลงหมด และปิดท้ายด้วย <strong>ลูกหมายเลข 8 (สีดำ)</strong> เพื่อชนะ</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script src="js/game.js"></script>

@@ -772,6 +772,7 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+
 /* จัดรูปแบบเมนูภายใน */
 .cv-navbar1 {
     display: flex;
@@ -829,6 +830,94 @@
     margin-bottom: 10px;
     font-size: 14px;
 }
+/* --- ส่วนคำแนะนำการเล่น --- */
+.instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: white;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.instructions h3 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.inst-card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.inst-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.inst-card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inst-card h4 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.inst-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #ddd;
+    font-weight: 300;
+}
+
+/* ปุ่ม Reset แบบใหม่ */
+.btn-reset {
+    background: #a10f1a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Kanit', sans-serif;
+    margin: 20px 0;
+}
+
+.btn-reset:hover {
+    background: #e63946;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+}
+
+/* ปรับแต่ง Canvas ให้ลื่นไหลบนมือถือ */
+.canvas-wrapper {
+    overflow: hidden;
+    touch-action: none;
+    border: 8px solid #5d4037;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #2e7d32;
+    margin: 0 auto;
+    max-width: 100%;
+}
 
 canvas {
     width: 95vw;
@@ -852,11 +941,19 @@ button {
     background: gold;
     border-radius: 10px;
     font-weight: bold;
+display: block;
+    max-width: 100%;
+    height: auto; /* รักษา Aspect Ratio */
 }
-/* 📱 มือถือ */
-@media (max-width: 600px){
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .instruction-grid {
+        grid-template-columns: 1fr; /* เปลี่ยนเป็นแนวตั้งบนมือถือ */
+    }
+    
     .hud {
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
     }
 }
