@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="สถิติการแข่งขันบาสเกตบอลทีม Chalke ของ ธัญเทพ หาญกล้า (Thanyathep Hankla)">
     <title>Chalke Stats | Thanyathep Hankla</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
-
-    <style>
-        body { margin: 0; background: #f4f4f4; font-family: 'Kanit', sans-serif; }
-        .main-navbar-wrapper { background: #a10f1a; height: 50px; }
-        .card { background: #a10f1a; min-height: 300px; margin: 20px; border-radius: 20px; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; background: #eee; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="js/script.js" defer></script>
 </head>
@@ -28,7 +20,7 @@
         <nav class="cv-navbar">
             <a href="index.html">🏠 Home</a>
             <a href="cv.html">👤 About</a>
-            <a href="js-page.html" class="cv-active">🏀 Chalke Game Stats</a>
+            <a href="js-page.html" class="cv-active" aria-current="page">🏀 Chalke Stats</a>
             <a href="js-page2.html">🏀 KhaeSad Stats</a>
         </nav>
     </header>
@@ -36,7 +28,7 @@
     <main class="container">
         <section class="card">
             <h1 class="bebas-font">🏀 Player Profile</h1>
-            <img src="image/S__2629643.webp" alt="Thanyathep Player Profile" class="profile-img" loading="lazy">
+            <img src="image/S__2629643.webp" alt="Thanyathep Player Profile" class="profile-img" width="180" height="180" fetchpriority="high">
             <div class="info">
                 <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
                 <p><strong>No:</strong> 6 | <strong>Position:</strong> G-F</p>
@@ -45,7 +37,7 @@
         </section>
 
         <section class="stats-section">
-            <h2 class="section-title">📊 Chalke Games Stats</h2>
+            <h2 class="section-title bebas-font">📊 Chalke Games Stats</h2>
             
             <div class="btn-group">
                 <button onclick="calculatePPG()" class="btn-calc">🔥 Calculate PPG</button>
@@ -53,54 +45,60 @@
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card">
+                <article class="stat-card">
                     <h3>Freshman Year</h3>
                     <table class="score-table">
                         <thead>
                             <tr><th>Game</th><th>Point</th></tr>
                         </thead>
-                        <tbody>
+                        <tbody id="freshman-table">
                             <tr><td>G1</td><td class="point">18</td></tr>
                             <tr><td>G2</td><td class="point">41</td></tr>
                             <tr><td>G3</td><td class="point">26</td></tr>
                             <tr><td>G4</td><td class="point">32</td></tr>
                             <tr><td>G5</td><td class="point">20</td></tr>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
                         </tbody>
+                        <tfoot>
+                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                        </tfoot>
                     </table>
-                </div>
+                </article>
 
-                <div class="stat-card">
+                <article class="stat-card">
                     <h3>Sophomore Year</h3>
                     <table class="score-table">
                         <thead>
                             <tr><th>Game</th><th>Point</th></tr>
                         </thead>
-                        <tbody>
+                        <tbody id="sophomore-table">
                             <tr><td>G1</td><td class="point">17</td></tr>
                             <tr><td>G2</td><td class="point">28</td></tr>
                             <tr><td>G3</td><td class="point">22</td></tr>
                             <tr><td>G4</td><td class="point">33</td></tr>
                             <tr><td>G5</td><td class="point">24</td></tr>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
                         </tbody>
+                        <tfoot>
+                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                        </tfoot>
                     </table>
-                </div>
+                </article>
 
-                <div class="stat-card">
+                <article class="stat-card">
                     <h3>Junior Year</h3>
                     <table class="score-table">
                         <thead>
                             <tr><th>Game</th><th>Point</th></tr>
                         </thead>
-                        <tbody>
+                        <tbody id="junior-table">
                             <tr><td>G1</td><td class="point">19</td></tr>
                             <tr><td>G2</td><td class="point">30</td></tr>
                             <tr><td>G3</td><td class="point">16</td></tr>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
                         </tbody>
+                        <tfoot>
+                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                        </tfoot>
                     </table>
-                </div>
+                </article>
             </div>
 
             <div class="career-summary">
