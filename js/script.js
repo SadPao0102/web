@@ -1,89 +1,57 @@
-let games = [];
-
-function addGame() {
-    let opponent = document.getElementById("opponent").value;
-    let points = parseInt(document.getElementById("points").value);
-
-    if (!opponent || isNaN(points)) {
-        alert("กรอกข้อมูลให้ครบ");
-        return;
-    }
-
-    games.push({ opponent, points });
-
-    document.getElementById("opponent").value = "";
-    document.getElementById("points").value = "";
-
-    renderTable();
-}
-
-function renderTable() {
-    let table = document.getElementById("tableBody");
-    table.innerHTML = "";
-
-    games.forEach((game, index) => {
-        let row = `
-            <tr>
-                <td>${game.opponent}</td>
-                <td>${game.points}</td>
-                <td><button onclick="deleteGame(${index})">Delete</button></td>
-            </tr>
-        `;
-        table.innerHTML += row;
-    });
-
-    // ❌ เอาออก (ไม่ให้คำนวณอัตโนมัติ)
-    // calculatePPG();
-}
-
-function deleteGame(index) {
-    games.splice(index, 1);
-    renderTable();
-
-    // รีเซ็ตค่า PPG เมื่อมีการลบ
-    document.getElementById("ppg").innerText = "PPG: -";
-}
-
-function calculatePPG() {
-    if (games.length === 0) {
-        document.getElementById("ppg").innerText = "PPG: 0";
-        return;
-    }
-
-    let total = games.reduce((sum, game) => sum + game.points, 0);
-    let avg = (total / games.length).toFixed(2);
-
-    document.getElementById("ppg").innerText = "PPG: " + avg;
-}
-
 function calculatePPG() {
     const tables = document.querySelectorAll(".score-table");
+    
+    // 1. ตั้งตัวแปรสำหรับเก็บค่ารวม "ทุกปี"
+    let totalPointsCareer = 0;
+    let totalGamesCareer = 0;
 
     tables.forEach(table => {
         let points = table.querySelectorAll(".point");
-        let sum = 0;
+        let sumYear = 0;
 
         points.forEach(p => {
-            sum += parseInt(p.innerText) || 0;
+            let val = parseInt(p.innerText) || 0;
+            sumYear += val;
+            
+            // สะสมค่าเพื่อใช้คำนวณ Career Summary
+            totalPointsCareer += val;
+            totalGamesCareer++;
         });
 
-        let avg = (sum / points.length).toFixed(1);
-
+        // 2. คำนวณค่าเฉลี่ยรายปี
+        let avgYear = (sumYear / points.length).toFixed(1);
         let ppgCell = table.querySelector(".ppg");
-        ppgCell.innerText = avg;
-
-        // 🔥 animation นิดๆ
-        ppgCell.style.transform = "scale(1.2)";
-        setTimeout(() => {
-            ppgCell.style.transform = "scale(1)";
-        }, 200);
+        
+        if (ppgCell) {
+            ppgCell.innerText = avgYear;
+            // ใส่ Animation เล็กน้อย
+            ppgCell.style.transform = "scale(1.2)";
+            setTimeout(() => { ppgCell.style.transform = "scale(1)"; }, 200);
+        }
     });
+
+    // 3. คำนวณค่าเฉลี่ยรวมทุกปี (Career Summary)
+    const careerDisplay = document.getElementById("total-career-ppg");
+    if (careerDisplay && totalGamesCareer > 0) {
+        let avgCareer = (totalPointsCareer / totalGamesCareer).toFixed(2);
+        careerDisplay.innerText = avgCareer;
+        careerDisplay.style.color = "#c1121f"; // เปลี่ยนสีให้เด่นขึ้น
+    }
 }
 
-// 🔥 ปุ่มรีเซ็ต
+// 🔥 ฟังก์ชันรีเซ็ตค่า
 function resetPPG() {
+    // รีเซ็ตค่ารายปีในตาราง
     const ppgs = document.querySelectorAll(".ppg");
     ppgs.forEach(p => {
         p.innerText = "-";
+        p.style.color = ""; // คืนค่าสีเดิม
     });
+
+    // รีเซ็ตค่ารวมทุกปี
+    const careerDisplay = document.getElementById("total-career-ppg");
+    if (careerDisplay) {
+        careerDisplay.innerText = "-";
+        careerDisplay.style.color = "";
+    }
 }

@@ -481,15 +481,19 @@ td:hover {
 }
 
 .btn-pink-reset {
-    background: white;
-    color: #ff4d6d;
+    background: #f8f8f8; /* ใส่พื้นหลังสีเทาอ่อนมาก */
+    color: #d63384;      /* ใช้สีชมพูที่เข้มขึ้นกว่าเดิมเล็กน้อยเพื่อให้ตัดกับพื้นหลัง */
     border: 2px solid #ff4d6d;
     padding: 10px 25px;
     border-radius: 50px;
     cursor: pointer;
+    font-weight: bold;   /* เพิ่มความหนาตัวอักษรช่วยให้อ่านง่ายขึ้น */
+    
 }
 
 .btn-pink-calc:hover { background: #ff758f; transform: scale(1.05); }
+.btn-pink-reset:hover { background: #ff758f; transform: scale(1.05); }
+
 
 /* Stats Cards */
 .pink-grid {
@@ -523,16 +527,55 @@ td:hover {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #fff0f3;
+    color: #333333; /* จากเดิมที่เป็นสีเทาจางๆ ให้ใช้สีเข้มเกือบดำ */
 }
+
+/* ปรับสีหัวข้อรองให้เข้มขึ้น */
+.pink-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: left;
+    color: #444444; /* ปรับจาก #5f5f5f เป็นสีที่เข้มขึ้น */
+    border-bottom: 1px dashed #ffccd5;
+    padding-bottom: 5px;
+}
+
 
 .pink-res-row {
     background: #fff0f3;
     font-weight: bold;
-    color: #ff4d6d;
+    color: #c9184a;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
     .pink-profile-flex { gap: 20px; }
     .pink-main-title { font-size: 2.2rem; }
+}
+.pink-summary-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pink-summary-box {
+    background: #ffffff;
+    border: 3px solid #ff4d6d; /* ใช้สีชมพูเข้มเพื่อ Contrast ที่ดี */
+    padding: 25px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.15);
+}
+
+.pink-summary-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+.pink-highlight-total {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c9184a; /* สีชมพูที่เข้มกว่าปกติเพื่อให้อ่านง่าย (Pass Accessibility) */
 }
