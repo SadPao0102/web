@@ -3,41 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
     <meta name="description" content="ประวัติส่วนตัวของ ธัญเทพ หาญกล้า นักศึกษาครุศาสตร์วิศวกรรมคอมพิวเตอร์ KMITL">
-    <title>ประวัติส่วนตัว - ธัญเทพ หาญกล้า</title>
-    
+
+    <title>About | Thanyathep Hankla</title>
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-    
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <!-- ใช้ font ตัวเดียว (เร็วขึ้น) -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- preload รูป -->
+    <link rel="preload" as="image" href="image/S__2646043.webp">
+
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+        }
+
+        /* NAVBAR */
+        .cv-navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #d90429;
+            padding: 15px;
+        }
+
+        .cv-navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cv-active {
+            border-bottom: 3px solid #fff;
+        }
+
+        /* CONTAINER */
+        .cv-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* CARD */
+        .cv-card {
+            background: #fff;
+            border: 2px solid #d90429;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cv-card h1 {
+            color: #d90429;
+        }
+
+        .cv-profile-img {
+            border-radius: 50%;
+            margin: 15px 0;
+            object-fit: cover;
+        }
+
+        .cv-info p {
+            margin: 5px 0;
+        }
+
+        /* SECTION */
+        .cv-section {
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #d90429;
+        }
+
+        .cv-title {
+            color: #d90429;
+        }
+
+        .cv-skill-list {
+            padding-left: 20px;
+        }
+
+        .cv-skill-list li {
+            margin: 8px 0;
+        }
+
+        /* FOOTER */
+        .footer-main {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #fff;
+            margin-top: 30px;
+        }
+    </style>
 
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
 
-    <header class="main-navbar-wrapper">
-        <nav class="cv-navbar">
-            <a href="index.html">🏠 Home</a>
-            <a href="cv.html" class="cv-active">👤 About</a>
-            <a href="js-page.html">🏀 Chalke Stats</a>
-            <a href="js-page2.html">🏀 KhaeSad Stats</a>
-        </nav>
-    </header>
+    <!-- NAVBAR -->
+    <nav class="cv-navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="cv.html" class="cv-active">👤 About</a>
+        <a href="js-page.html">🏀 Chalke Stats</a>
+        <a href="js-page2.html">🏀 KhaeSad Stats</a>
+    </nav>
 
+    <!-- PROFILE -->
     <main class="cv-container">
+
         <article class="cv-card">
-            <h1 class="bebas-font">👤 ประวัติส่วนตัว</h1>
-            
-            <img src="image/S__2646043.webp" 
-                 class="cv-profile-img" 
-                 alt="รูปโปรไฟล์ของ ธัญเทพ หาญกล้า" 
-                 width="200" 
+            <h1>👤 ประวัติส่วนตัว</h1>
+
+            <img src="image/S__2646043.webp"
+                 class="cv-profile-img"
+                 alt="รูปโปรไฟล์ ธัญเทพ หาญกล้า"
+                 width="200"
                  height="200"
                  fetchpriority="high">
-                 
+
             <div class="cv-info">
                 <p><strong>ชื่อ:</strong> ธัญเทพ หาญกล้า (Thanyathep Hankla)</p>
                 <p><strong>ชื่อเล่น:</strong> เปา (Pao)</p>
@@ -46,14 +145,17 @@
             </div>
         </article>
 
+        <!-- EDUCATION -->
         <section class="cv-section">
             <h2 class="cv-title">🎓 การศึกษา</h2>
             <p><strong>ระดับ:</strong> ปริญญาตรี</p>
             <p><strong>สถาบัน:</strong> สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)</p>
             <p><strong>คณะ:</strong> ครุศาสตร์อุตสาหกรรมและเทคโนโลยี (SIET)</p>
-            <p><strong>สาขา:</strong> วิศวกรรม | <strong>แขนง:</strong> คอมพิวเตอร์</p>
+            <p><strong>สาขา:</strong> ครุศาสตร์วิศวกรรม</p>
+            <p><strong>แขนง:</strong> คอมพิวเตอร์</p>
         </section>
 
+        <!-- SKILL -->
         <section class="cv-section">
             <h2 class="cv-title">💪 ความสามารถ</h2>
             <ul class="cv-skill-list">
@@ -61,15 +163,18 @@
                 <li>🏀 Basketball</li>
             </ul>
         </section>
+
+        <!-- CONTACT -->
+        <section class="cv-section">
+            <h2 class="cv-title">📞 ติดต่อ</h2>
+            <p>Email: <a href="mailto:thanyathep.hankla@email.com">thanyathep.hankla@email.com</a></p>
+            <p>Tel: <a href="tel:0928218998">092-821-8998</a></p>
+        </section>
+
     </main>
 
-    <footer class="cv-section">
-        <h2 class="cv-title">📞 ติดต่อ</h2>
-        <p>Email: <a href="mailto:thanyathep.hankla@email.com">thanyathep.hankla@email.com</a></p>
-        <p>Tel: <a href="tel:0928218998">092-821-8998</a></p>
-    </footer>
-
-    <footer style="text-align: center; padding: 20px; color: #555; font-size: 0.9rem;">
+    <!-- FOOTER -->
+    <footer class="footer-main">
         <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
     </footer>
 

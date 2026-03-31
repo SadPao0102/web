@@ -3,29 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
     <meta name="description" content="หน้าแรก - ธัญเทพ หาญกล้า นักศึกษา KMITL">
+
     <title>Home | Thanyathep Hankla</title>
-    
+
+    <!-- Preconnect (ช่วยโหลด font เร็วขึ้น) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/home.css">
-    </noscript>
+
+    <!-- โหลด font แบบเร็ว -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap&display=swap" rel="stylesheet">
+
+    <!-- Preload CSS -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/home.css" as="style">
+
+    <!-- โหลด CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- Preload รูปหลัก (ช่วย LCP) -->
+    <link rel="preload" as="image" href="image/S__2646043.webp">
 
     <style>
-        .hero-img-wrapper img { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; background: #eee; border-radius: 50%; }
-        .hero-section { min-height: 80vh; display: flex; align-items: center; }
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+        }
+
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+        }
+
+        .highlight {
+            color: #d90429;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #eee;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-red {
+            background: #d90429;
+            color: #fff;
+        }
+
+        .btn-outline {
+            border: 2px solid #d90429;
+            color: #d90429;
+        }
+
+        .hero-dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero-dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ddd;
+            min-width: 180px;
+        }
+
+        .hero-dropdown:hover .hero-dropdown-content {
+            display: block;
+        }
+
+        .hero-dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero-dropdown-content a:hover {
+            background: #f5f5f5;
+        }
+
+        .cv-navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #d90429;
+            padding: 15px;
+        }
+
+        .cv-navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cv-active {
+            border-bottom: 3px solid #fff;
+        }
+
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #fff;
+        }
     </style>
 </head>
+
 <body>
 
-    <header class="main-navbar-wrapper">
+    <!-- NAVBAR -->
+    <header>
         <nav class="cv-navbar">
             <a href="index.html" class="cv-active">🏠 Home</a>
             <a href="cv.html">👤 About</a>
@@ -34,39 +161,63 @@
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero-section">
         <div class="hero-container">
+
+            <!-- TEXT -->
             <div class="hero-text">
                 <h2>Welcome to my world</h2>
                 <h1>I'm <span class="highlight">Thanyathep</span></h1>
-                <p class="typing" id="typewriter" style="min-height: 1.5em;"></p>
-                
+
+                <p id="typewriter" style="min-height: 1.5em;"></p>
+
                 <div class="btn-group">
                     <a href="cv.html" class="btn btn-red">About Me</a>
+
                     <div class="hero-dropdown">
-                        <button class="btn btn-outline dropbtn">View Stats ▼</button>
+                        <button class="btn btn-outline">View Stats ▼</button>
                         <div class="hero-dropdown-content">
-                            <a href="js-page.html">🏀 Chalke Stats</a>
+                            <a href="js-page.html">🏀 Chalke Games Stats</a>
                             <a href="js-page2.html">🏀 KhaeSad Stats</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- IMAGE -->
             <div class="hero-img-wrapper">
-                <img src="image/S__2646043.webp" 
-                     alt="Thanyathep Hankla" 
-                     width="400" 
-                     height="400" 
+                <img src="image/S__2646043.webp"
+                     alt="Thanyathep Hankla"
+                     width="400"
+                     height="400"
                      fetchpriority="high">
             </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="main-footer">
         <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
     </footer>
 
-    <script src="js/home.js" defer></script>
+    <!-- JS -->
+    <script defer>
+        const text = "Student | Developer | Basketball Player 🏀";
+        let i = 0;
+        const speed = 50;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+
 </body>
 </html>
