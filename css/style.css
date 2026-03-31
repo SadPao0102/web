@@ -208,11 +208,12 @@ body {
 /* cv page only */
 .cv-container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    box-sizing: border-box; /* ป้องกันขนาดการ์ดล้นหน้าจอ */
+    margin: 32px auto;
+    padding: 0 16px;
+    width: 100%;
 }
 
+/* ✅ 3. Navbar: ลายเดิม ปรับให้เสถียรขึ้น */
 .cv-navbar {
     display: flex;
     justify-content: center;
@@ -220,63 +221,67 @@ body {
     padding: 10px;
     border-radius: 12px;
     margin-bottom: 20px;
-    gap: 10px; /* เพิ่มระยะห่างระหว่างเมนู */
+    gap: 10px;
 }
 
 .cv-navbar a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
     font-size: 18px;
 }
 
-/* hover */
 .cv-navbar a:hover {
-    background: white;
+    background: #ffffff;
     color: #a10f1a;
 }
 
-
-
+/* ✅ 4. Card & Section: ลายเดิมที่คงความมนและเส้นขอบแดง */
 .cv-card, .cv-section {
-    background: white;
-    padding: 25px; /* เพิ่ม padding อีกนิดให้ดูโปร่ง */
+    background: #ffffff;
+    padding: 25px;
     margin-bottom: 25px;
-    border-radius: 20px; /* มนขึ้นให้เข้ากับสไตล์ Modern */
+    border-radius: 20px;
     border: 2px solid #a10f1a;
-    box-shadow: 0 8px 20px rgba(161, 15, 26, 0.15); /* ปรับเงาให้นุ่มนวลขึ้น */
+    /* ลดความเบลอของเงาเล็กน้อยเพื่อให้ประมวลผลกราฟิกไวขึ้น */
+    box-shadow: 0 4px 12px rgba(161, 15, 26, 0.12);
 }
 
+/* ✅ 5. Profile Image: สำคัญมากต่อคะแนน CLS (หน้าจอไม่เด้ง) */
 .cv-profile-img {
-    width: 160px;
-    height: 160px;
+    width: 160px;  /* ต้องระบุให้ตรงกับใน HTML */
+    height: 160px; 
     object-fit: cover;
     border-radius: 50%;
     display: block;
     margin: 0 auto 15px auto;
     border: 4px solid #a10f1a;
     transition: transform 0.3s ease;
+    background: #eee; /* ใส่สีรองรับระหว่างรอโหลดรูป */
 }
 
 .cv-profile-img:hover {
-    transform: scale(1.05); /* เพิ่มลูกเล่นตอน hover รูปโปรไฟล์ */
+    transform: scale(1.05);
 }
 
 .cv-info {
     text-align: center;
-    line-height: 1.8; /* เพิ่มระยะบรรทัดให้อ่านง่าย */
+    line-height: 1.8;
 }
 
+/* ✅ 6. Title: ลายเดิมที่มีเส้นขอบด้านข้าง */
 .cv-title {
-   color: #a10f1a;
+    color: #a10f1a;
     margin-bottom: 15px;
     border-left: 5px solid #a10f1a;
     padding-left: 10px;
     text-align: left;
+    font-weight: 700;
 }
 
+/* ✅ 7. Skill List: ลายเดิม ปรับ Flex ให้โหลดไวขึ้น */
 .cv-skill-list {
     display: flex;
     flex-wrap: wrap;
@@ -284,24 +289,23 @@ body {
     justify-content: center;
     list-style: none;
     padding: 0;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
 }
 
 .cv-skill-list li {
-    background: #fff5f5; /* พื้นหลังแดงระเรื่อ */
+    background: #fff5f5;
     border: 1px solid #a10f1a;
     padding: 6px 18px;
     border-radius: 50px;
     font-size: 16px;
     color: #a10f1a;
     font-weight: 500;
-    transition: 0.3s;
-    cursor: default;
+    transition: 0.2s ease-out;
 }
 
 .cv-skill-list li:hover {
     background: #a10f1a;
-    color: white;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
