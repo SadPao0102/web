@@ -6,33 +6,52 @@ body {
     }
 
     .main-navbar-wrapper {
-        background: #a10f1a;
-        width: 100%;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+    background: #a10f1a;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.cv-navbar {
+    display: flex;
+    justify-content: center;
+    /* ลด Padding บน-ล่าง จาก 10px เหลือ 5px */
+    padding: 5px 15px; 
+    /* ลดระยะห่างระหว่างเมนูจาก 15px เหลือ 5px ถึง 8px */
+    gap: 8px; 
+}
+
+.cv-navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    /* ลดขนาดตัวอักษรลงเล็กน้อย (ถ้าของเดิมใหญ่ไป) */
+    font-size: 0.9rem; 
+    /* ลด Padding ในปุ่ม จาก 8px 16px เหลือ 6px 12px */
+    padding: 6px 12px; 
+    border-radius: 6px;
+    transition: 0.2s;
+    /* ป้องกันตัวอักษรตัดบรรทัด */
+    white-space: nowrap; 
+}
+
+.cv-navbar a:hover,
+.cv-navbar a.cv-active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* แถม: สำหรับมือถือที่จอกระทัดรัดมาก */
+@media (max-width: 480px) {
     .cv-navbar {
-        display: flex;
-        justify-content: center;
-        padding: 12px;
-        gap: 15px;
+        gap: 2px;
+        padding: 5px 5px;
     }
-
     .cv-navbar a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 8px 16px;
-        border-radius: 8px;
-        transition: 0.2s;
+        font-size: 0.75rem; /* ลดขนาดตัวอักษรลงอีกในมือถือ */
+        padding: 5px 8px;
     }
-
-    .cv-navbar a:hover,
-    .cv-navbar a.cv-active {
-        background: rgba(255, 255, 255, 0.2);
-    }
+}
 
     .container {
         max-width: 1100px;
@@ -183,26 +202,47 @@ body {
 .cv-navbar {
     display: flex;
     justify-content: center;
+    align-items: center; /* ช่วยให้ของข้างในบาลานซ์ */
     background: #a10f1a;
-    padding: 10px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    gap: 10px;
+    /* ลด Padding ลงเพื่อให้แถบเมนูไม่หนาเกินไป */
+    padding: 6px 12px; 
+    border-radius: 10px; /* ลดรัศมีลงเล็กน้อยให้ดูคมขึ้น */
+    margin-bottom: 15px; /* ลดระยะห่างด้านล่าง */
+    gap: 5px; /* ลดช่องว่างระหว่างปุ่ม */
+    /* เพิ่มสิ่งนี้เพื่อ Performance: ช่วยให้ Browser ไม่ต้องคำนวณ Layout ใหม่บ่อย */
+    contain: content; 
 }
 
 .cv-navbar a {
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-    font-size: 18px;
+    /* ลด Padding ภายในปุ่มลง */
+    padding: 6px 14px; 
+    border-radius: 6px;
+    transition: background 0.2s ease; /* ปรับให้ไวขึ้นเล็กน้อย */
+    /* ลดขนาด Font จาก 18px เป็น 16px (1rem) เพื่อความพอดี */
+    font-size: 16px; 
+    font-weight: 500;
+    white-space: nowrap; /* ป้องกันชื่อเมนูแตกแถว */
 }
 
 .cv-navbar a:hover,
 .cv-navbar .cv-active {
     background: #ffffff;
     color: #a10f1a;
+}
+
+/* เพิ่มจุดสำคัญ: สำหรับหน้าจอมือถือ (Responsive) */
+@media (max-width: 600px) {
+    .cv-navbar {
+        gap: 2px;
+        padding: 4px;
+        flex-wrap: wrap; /* ให้เมนูลงมาบรรทัดใหม่ได้ถ้าจอแคบมาก */
+    }
+    .cv-navbar a {
+        font-size: 14px; /* ลดขนาดตัวอักษรบนมือถือ */
+        padding: 5px 10px;
+    }
 }
 
 /* Card */
@@ -729,34 +769,42 @@ body {
 
 /* Game */
 .main-navbar-wrapper1 {
-    position: fixed;   /* ล็อกตำแหน่ง */
-    top: 0;            /* ชิดขอบบน */
-    left: 0;           /* ชิดขอบซ้าย */
-    width: 100%;       /* เต็มความกว้างหน้าจอ */
-    z-index: 1000;     /* ให้อยู่เหนือ Layer อื่นๆ */
-    background-color: #333; /* ใส่สีพื้นหลังให้เมนู (เปลี่ยนสีตามต้องการ) */
-
+    position: fixed;   
+    top: 0;            
+    left: 0;           
+    width: 100%;       
+    z-index: 1000;     
+    background-color: #333; 
+    /* เพิ่มสิ่งนี้เพื่อ Performance: ลดการวาดใหม่ของ Browser */
+    will-change: transform; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 /* จัดรูปแบบเมนูภายใน */
 .cv-navbar1 {
     display: flex;
-    justify-content: center; /* จัดเมนูให้อยู่ตรงกลาง */
-    padding: 15px 0;
+    justify-content: center; 
+    align-items: center;
+    /* ลด Padding จาก 15px เหลือ 8px เพื่อให้แถบบางลง */
+    padding: 8px 0; 
     font-family: 'Kanit', 'Montserrat', sans-serif;
-
 }
 
 .cv-navbar1 a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    font-family: sans-serif;
+    /* ลด Padding ปุ่มลงจาก 10px 20px เป็น 6px 15px */
+    padding: 6px 15px; 
+    /* ลดขนาด Font ลงเล็กน้อยเพื่อให้ดูทันสมัยและไม่เบียดกัน */
+    font-size: 15px; 
+    font-family: 'Kanit', sans-serif; /* ใช้ Font เดียวกันเพื่อลดการโหลด */
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .cv-navbar1 a:hover {
     background-color: #555;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 .pool-page {
     margin: 0;
@@ -766,6 +814,14 @@ body {
     align-items: center;
     height: 100vh;
     margin-top: 70px;
+}
+
+/* สำหรับมือถือขนาดเล็ก */
+@media (max-width: 480px) {
+    .cv-navbar1 a {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
 }
 
 .game-container {
