@@ -839,6 +839,10 @@ canvas {
     box-shadow:
         inset 0 0 40px rgba(0,0,0,0.9),
         0 10px 40px rgba(0,0,0,0.9);
+        touch-action: none; /* ปิดการซูมและเลื่อนหน้าจอด้วยนิ้วบนตัวเกม */
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 button {
