@@ -7,9 +7,18 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <style>
+        body { margin: 0; background: #f4f4f4; font-family: 'Kanit', sans-serif; }
+        .main-navbar-wrapper { background: #a10f1a; height: 50px; }
+        .card { background: #a10f1a; min-height: 300px; margin: 20px; border-radius: 20px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; background: #eee; }
+    </style>
 
     <script src="js/script.js" defer></script>
 </head>
