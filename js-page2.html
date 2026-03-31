@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DO<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -51,4 +51,93 @@
             </div>
         </article>
 
-        <!-- เหมือนเดิมทั้งหมด -->
+        <section class="pink-stats-section">
+            <h2 class="pink-section-title bebas-font">📊 KhaeSad Stats</h2>
+
+            <div class="pink-button-group">
+                <button type="button" onclick="calcPinkPPG()" class="btn-pink-calc">💖 Calculate PPG</button>
+                <button type="button" onclick="resetPinkPPG()" class="btn-pink-reset">Reset</button>
+            </div>
+
+            <div class="pink-grid">
+                <article class="pink-stat-card">
+                    <h3>Freshman Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody class="pink-tbody-y1">
+                            <tr><td>G1</td><td class="pink-pt">8</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">1</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">15</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row">
+                                <th scope="row">PPG</th>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+                <article class="pink-stat-card">
+                    <h3>Sophomore Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody class="pink-tbody-y2">
+                            <tr><td>G1</td><td class="pink-pt">36</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">9</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">22</td></tr>
+                            <tr><td>G4</td><td class="pink-pt">11</td></tr>
+                            <tr><td>G5</td><td class="pink-pt">14</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row">
+                                <th scope="row">PPG</th>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+
+                <article class="pink-stat-card">
+                    <h3>Junior Year</h3>
+                    <table class="pink-table">
+                        <thead>
+                            <tr><th>Game</th><th>Points</th></tr>
+                        </thead>
+                        <tbody class="pink-tbody-y3">
+                            <tr><td>G1</td><td class="pink-pt">20</td></tr>
+                            <tr><td>G2</td><td class="pink-pt">18</td></tr>
+                            <tr><td>G3</td><td class="pink-pt">19</td></tr>
+                            <tr><td>G4</td><td class="pink-pt">20</td></tr>
+                            <tr><td>G5</td><td class="pink-pt">15</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="pink-res-row">
+                                <th scope="row">PPG</th>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </article>
+            </div>
+
+            <aside class="pink-summary-container">
+                <div class="pink-summary-box">
+                    <h3 class="pink-summary-title bebas-font">🏆 Career Summary</h3>
+                    <p>Total Average PPG: <span id="career-ppg-display" class="pink-highlight-total">-</span></p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
+    </footer>
+
+    <script src="js/stats-pink.js" defer></script>
+</body>
+</html>
