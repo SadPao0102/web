@@ -3,61 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ประวัติส่วนตัวและทักษะของ ธัญเทพ หาญกล้า นักศึกษา SIET KMITL สาขาวิศวกรรมคอมพิวเตอร์">
     <title>About | Thanyathep Hankla</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header class="main-navbar-wrapper">
-        <nav class="cv-navbar">
-            <a href="index.html">🏠 Home</a>
-            <a href="cv.html" class="cv-active" aria-current="page">👤 About</a>
-            <a href="js-page.html">🏀 Chalke Stats</a>
-            <a href="js-page2.html">🏀 KhaeSad Stats</a>
-        </nav>
-    </header>
 
-    <main class="container">
-        <article class="card" style="margin-top: 20px;">
-            <h1 class="bebas-font">👤 About Me</h1>
-            <img src="image/S__2646043.webp" class="profile-img" alt="ธัญเทพ หาญกล้า" width="200" height="200" fetchpriority="high">
-            <div class="info">
-                <p><strong>ชื่อ:</strong> ธัญเทพ หาญกล้า (Thanyathep Hankla)</p>
-                <p><strong>ชื่อเล่น:</strong> เปา (Pao) | <strong>อายุ:</strong> 21 ปี</p>
-                <p><strong>รหัสนักศึกษา:</strong> 66030243</p>
-            </div>
-        </article>
+<header class="main-navbar-wrapper">
+    <nav class="cv-navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="cv.html" class="cv-active">👤 About</a>
+        <a href="js-page.html">🏀 Chalke Games Stats</a>
+        <a href="js-page2.html">🏀 KhaeSad Stats</a>
+    </nav>
+</header>
 
-        <div class="stats-grid">
-            <section class="stat-card">
-                <h2 class="bebas-font" style="color: #a10f1a; font-size: 2rem;">🎓 Education</h2>
-                <div style="text-align: left; margin-top: 15px;">
-                    <p><strong>สถาบัน:</strong> สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)</p>
-                    <p><strong>คณะ:</strong> ครุศาสตร์อุตสาหกรรมและเทคโนโลยี (SIET)</p>
-                    <p><strong>สาขา:</strong> วิศวกรรมคอมพิวเตอร์</p>
-                </div>
-            </section>
+<main class="cv-container">
 
-            <section class="stat-card">
-                <h2 class="bebas-font" style="color: #a10f1a; font-size: 2rem;">💪 Skills</h2>
-                <div class="skill-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; justify-content: center;">
-                    <span style="background: #a10f1a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">💻 HTML5 / CSS3</span>
-                    <span style="background: #a10f1a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">🚀 JavaScript</span>
-                    <span style="background: #a10f1a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">🏀 Basketball Specialist</span>
-                    <span style="background: #a10f1a; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">🔧 Computer Engineering</span>
-                </div>
-            </section>
+    <!-- Profile -->
+    <section class="cv-card">
+        <h1 class="bebas-font" style="text-align:center;">👤 About Me</h1>
+
+        <div class="profile-wrapper">
+            <img src="image/S__2646043.webp" class="cv-profile-img" alt="ธัญเทพ หาญกล้า">
         </div>
-    </main>
 
-    <footer class="main-footer">
-        <p>Email: <a href="mailto:thanyathep.hankla@email.com" style="color: #a10f1a; font-weight: bold; text-decoration: none;">thanyathep.hankla@email.com</a></p>
-        <p style="margin-top: 10px;">&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
-    </footer>
+        <div class="cv-info">
+            <p><strong>ชื่อ:</strong> ธัญเทพ หาญกล้า (Thanyathep Hankla)</p>
+            <p><strong>ชื่อเล่น:</strong> เปา (Pao)</p> 
+            <strong>อายุ:</strong> 21 ปี</p>
+            <p><strong>รหัสนักศึกษา:</strong> 66030243</p>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section">
+        <h2 class="cv-title">🎓 Education</h2>
+        <p><strong>สถาบัน:</strong>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)</p>
+        <p><strong>คณะ:</strong> คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี (SIET)</p>
+        <p><strong>สาขา:</strong> ครุศาสตร์วิศวกรรม</p>
+        <p><strong>แขนง:</strong> คอมพิวเตอร์</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="cv-section">
+        <h2 class="cv-title">💪 Skills</h2>
+        <ul class="cv-skill-list">
+            <li>💻 HTML / CSS</li>
+            <li>🚀 JavaScript</li>
+            <li>🏀 Basketball</li>
+            <li>🔧 Engineering</li>
+        </ul>
+    </section>
+
+    <!-- 🔥 Contact Card -->
+    <section class="cv-section contact-card">
+        <h2 class="cv-title">📞 Contact</h2>
+        <p>📧 Email: <a href="mailto:thanyathep.hankla@email.com">thanyathep.hankla@email.com</a></p>
+        <p>📱 Phone: 092-821-8998</p>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <p>&copy; 2026 Thanyathep Hankla</p>
+</footer>
+
 </body>
 </html>
