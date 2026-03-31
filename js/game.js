@@ -101,15 +101,36 @@ class Ball {
 
     handlePotting() {
         this.active = false;
-        if (this.number === 0) { // ลูกขาวลงหลุม
+
+        // ถ้าเป็นลูกขาว
+        if (this.number === 0) {
             setTimeout(() => {
                 this.x = 200; this.y = 225;
                 this.vx = 0; this.vy = 0;
                 this.active = true;
             }, 500);
-        } else if (this.number === 8) {
+            return;
+        }
+
+        // ถ้าเป็นลูกดำ (ลูกที่ 8)
+        if (this.number === 8) {
             alert(turn === "player" ? "YOU WIN! 🎉" : "BOT WIN! 🤖");
             gameOver = true;
+            return;
+        }
+
+        // ระบบแบ่งกลุ่มลูก (Solid 1-7 / Stripes 9-15)
+        if (!playerGroup) {
+            if (this.number <= 7) {
+                playerGroup = (turn === "player") ? "Solid" : "Stripes";
+            } else {
+                playerGroup = (turn === "player") ? "Stripes" : "Solid";
+            }
+            botGroup = (playerGroup === "Solid") ? "Stripes" : "Solid";
+            
+            // อัปเดต HUD
+            document.getElementById("playerGroup").textContent = playerGroup;
+            document.getElementById("botGroup").textContent = botGroup;
         }
     }
 }
@@ -187,7 +208,28 @@ function handleCollision(b1, b2) {
         b2.vx = v1.x * cos - v2.y * sin; b2.vy = v2.y * cos + v1.x * sin;
     }
 }
+function resetGame() {
+    // 1. ล้างสถานะเกม
+    gameOver = false;
+    turn = "player";
+    botThinking = false;
+    playerGroup = null;
+    botGroup = null;
 
+    // 2. เซ็ตตำแหน่งลูกใหม่
+    setupBalls();
+
+    // 3. อัปเดตการแสดงผลบนหน้าจอ
+    updateHUD();
+    
+    // อัปเดตกลุ่มลูก (ถ้ามี Element นี้ใน HTML)
+    const pGroupEl = document.getElementById("playerGroup");
+    const bGroupEl = document.getElementById("botGroup");
+    if(pGroupEl) pGroupEl.textContent = "-";
+    if(bGroupEl) bGroupEl.textContent = "-";
+
+    console.log("Game Reset!");
+}
 function allStopped() {
     return balls.every(b => b.vx === 0 && b.vy === 0);
 }
