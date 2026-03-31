@@ -1,13 +1,12 @@
-* {
-    font-family: 'Montserrat', 'Kanit', sans-serif !important;
-}
+/* ✅ Base */
 body {
     margin: 0;
     background: #f4f4f4;
     color: #333;
+    font-family: 'Kanit', 'Montserrat', sans-serif;
 }
 
-/* ✅ 2. Navbar */
+/* ✅ Navbar */
 .main-navbar-wrapper {
     background: #a10f1a;
     width: 100%;
@@ -29,14 +28,15 @@ body {
     font-weight: 600;
     padding: 8px 16px;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-.cv-navbar a:hover, .cv-navbar a.cv-active {
+.cv-navbar a:hover,
+.cv-navbar a.cv-active {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* ✅ 3. Layout */
+/* ✅ Layout */
 .container {
     max-width: 1100px;
     margin: 30px auto;
@@ -44,89 +44,76 @@ body {
 }
 
 .bebas-font {
-    font-family: 'Bebas Neue', cursive !important;
-    font-size: 2.5rem;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
-/* ✅ 4. Profile Card (Header) */
+/* ✅ Profile */
 .card {
     background: linear-gradient(135deg, #a10f1a, #c1121f);
     color: white;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: center;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 25px rgba(161, 15, 26, 0.2);
+    margin-bottom: 30px;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid white;
-    margin: 15px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid white;
+    margin: 10px 0;
 }
+
+/* ✅ Section */
 .section-title {
-    margin-top: 0;
     text-align: center;
-    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
-    align-items: center;
     color: #a10f1a;
 }
 
-/* ✅ 5. Stats Grid & Cards (ตรงตามรูปที่ส่งมา) */
+/* ✅ Grid */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
+/* ✅ Card */
 .stat-card {
     background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
+    border-radius: 12px;
+    padding: 18px;
 }
 
 .stat-card h3 {
     margin-top: 0;
-    font-size: 1.3rem;
-    color: #333;
+    font-size: 1.2rem;
 }
 
-/* ✅ 6. Table Styling (ตรงตามรูป) */
+/* ✅ Table */
 .score-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-    border-radius: 10px;
-    overflow: hidden;
+    margin-top: 10px;
 }
 
 .score-table th {
     background: #a10f1a;
     color: white;
-    padding: 10px;
-    font-weight: 600;
+    padding: 8px;
 }
 
 .score-table td {
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #eee;
 }
 
-/* แถว PPG ไฮไลท์สีชมพูอ่อนเหมือนในรูป */
 .highlight-row {
-    background: #ffccd0 !important;
+    background: #ffccd0;
     font-weight: bold;
 }
 
@@ -134,68 +121,54 @@ body {
     color: #a10f1a;
 }
 
-/* ✅ 7. Buttons */
+/* ✅ Buttons */
 .btn-group {
-    display: flex;       /* ใช้ flex เพื่อจัดวางปุ่ม */
-    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
-    align-items: center;     /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    gap: 10px;           /* ระยะห่างระหว่างปุ่ม (ปรับลดได้ถ้าอยากให้ติดกันมากขึ้น) */
-    margin: 30px 0;      /* ระยะห่างด้านบนและล่างของบล็อกปุ่ม */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-/* ✅ สไตล์ปุ่ม Calculate (สีแดง) */
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .btn-calc {
     background: #a10f1a;
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px; /* ความมนตามรูป */
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(161, 15, 26, 0.3);
 }
-
-.btn-calc:hover { background: #c1121f; transform: scale(1.05); }
 
 .btn-reset {
-    background: #555555; /* สีเทาตามรูป */
+    background: #555;
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
 }
-.btn-reset:hover { background: #333333; }
 
-/* ✅ 8. Career Summary */
+/* ✅ Summary */
 .career-summary {
-    margin-top: 40px;
+    margin-top: 30px;
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    border: 2px solid #a10f1a;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
 }
 
 .ppg-highlight {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.8rem;
+    font-weight: bold;
     color: #a10f1a;
 }
 
-/* ✅ 9. Footer */
+/* ✅ Footer */
 .main-footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px;
     color: #888;
-    font-size: 0.9rem;
 }
 
-/* ✅ 10. Responsive (มือถือ) */
+/* ✅ Responsive */
 @media (max-width: 768px) {
     .stats-grid {
         grid-template-columns: 1fr;

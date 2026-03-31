@@ -3,116 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="สถิติการแข่งขันบาสเกตบอลทีม Chalke ของ ธัญเทพ หาญกล้า (Thanyathep Hankla)">
+    <meta name="description" content="สถิติการแข่งขันบาสเกตบอลทีม Chalke ของ ธัญเทพ หาญกล้า">
     <title>Chalke Stats | Thanyathep Hankla</title>
-    
+
+    <!-- ✅ โหลด font ตัวเดียว (เบาลง) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- ✅ CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- ✅ preload รูปหลัก (ช่วย LCP) -->
+    <link rel="preload" as="image" href="image/S__2629643.webp">
+
+    <!-- ✅ JS -->
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
 
-    <header class="main-navbar-wrapper">
-        <nav class="cv-navbar">
-            <a href="index.html">🏠 Home</a>
-            <a href="cv.html">👤 About</a>
-            <a href="js-page.html" class="cv-active" aria-current="page">🏀 Chalke Stats</a>
-            <a href="js-page2.html">🏀 KhaeSad Stats</a>
-        </nav>
-    </header>
+<header class="main-navbar-wrapper">
+    <nav class="cv-navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="cv.html">👤 About</a>
+        <a href="js-page.html" class="cv-active">🏀 Chalke Stats</a>
+        <a href="js-page2.html">🏀 KhaeSad Stats</a>
+    </nav>
+</header>
 
-    <main class="container">
-        <section class="card">
-            <h1 class="bebas-font">🏀 Player Profile</h1>
-            <img src="image/S__2629643.webp" alt="Thanyathep Player Profile" class="profile-img" width="180" height="180" fetchpriority="high">
-            <div class="info">
-                <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
-                <p><strong>No:</strong> 6 | <strong>Position:</strong> G-F</p>
-                <p><strong>คณะ:</strong> SIET (Engineering)</p>
-            </div>
-        </section>
+<main class="container">
 
-        <section class="stats-section">
-            <h2 class="section-title bebas-font">📊 Chalke Games Stats</h2>
-            
-            <div class="btn-group">
-                <button onclick="calculatePPG()" class="btn-calc">🔥 Calculate PPG</button>
-                <button onclick="resetPPG()" class="btn-reset">Reset</button>
-            </div>
+    <section class="card">
+        <h1 class="bebas-font">🏀 Player Profile</h1>
 
-            <div class="stats-grid">
-                <article class="stat-card">
-                    <h3>Freshman Year</h3>
-                    <table class="score-table">
-                        <thead>
-                            <tr><th>Game</th><th>Point</th></tr>
-                        </thead>
-                        <tbody id="freshman-table">
-                            <tr><td>G1</td><td class="point">18</td></tr>
-                            <tr><td>G2</td><td class="point">41</td></tr>
-                            <tr><td>G3</td><td class="point">26</td></tr>
-                            <tr><td>G4</td><td class="point">32</td></tr>
-                            <tr><td>G5</td><td class="point">20</td></tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
-                        </tfoot>
-                    </table>
-                </article>
+        <img src="image/S__2629643.webp"
+             alt="Thanyathep Player Profile"
+             class="profile-img"
+             width="180"
+             height="180"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
 
-                <article class="stat-card">
-                    <h3>Sophomore Year</h3>
-                    <table class="score-table">
-                        <thead>
-                            <tr><th>Game</th><th>Point</th></tr>
-                        </thead>
-                        <tbody id="sophomore-table">
-                            <tr><td>G1</td><td class="point">17</td></tr>
-                            <tr><td>G2</td><td class="point">28</td></tr>
-                            <tr><td>G3</td><td class="point">22</td></tr>
-                            <tr><td>G4</td><td class="point">33</td></tr>
-                            <tr><td>G5</td><td class="point">24</td></tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
-                        </tfoot>
-                    </table>
-                </article>
+        <div class="info">
+            <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
+            <p><strong>No:</strong> 6 | <strong>Position:</strong> G-F</p>
+            <p><strong>คณะ:</strong> SIET (Engineering)</p>
+        </div>
+    </section>
 
-                <article class="stat-card">
-                    <h3>Junior Year</h3>
-                    <table class="score-table">
-                        <thead>
-                            <tr><th>Game</th><th>Point</th></tr>
-                        </thead>
-                        <tbody id="junior-table">
-                            <tr><td>G1</td><td class="point">19</td></tr>
-                            <tr><td>G2</td><td class="point">30</td></tr>
-                            <tr><td>G3</td><td class="point">16</td></tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
-                        </tfoot>
-                    </table>
-                </article>
-            </div>
+    <section class="stats-section">
+        <h2 class="section-title bebas-font">📊 Chalke Games Stats</h2>
+        
+        <div class="btn-group">
+            <button onclick="calculatePPG()" class="btn-calc">Calculate PPG</button>
+            <button onclick="resetPPG()" class="btn-reset">Reset</button>
+        </div>
 
-            <div class="career-summary">
-                <h3 class="bebas-font">🏆 Career Total Summary</h3>
-                <p class="total-text">
-                    Total Average PPG: <span id="total-career-ppg" class="ppg-highlight">-</span>
-                </p>
-            </div>
-        </section>
-    </main>
+        <div class="stats-grid">
 
-    <footer class="main-footer">
-        <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
-    </footer>
+            <!-- Freshman -->
+            <article class="stat-card">
+                <h3>Freshman Year</h3>
+                <table class="score-table">
+                    <tbody>
+                        <tr><td>G1</td><td class="point">18</td></tr>
+                        <tr><td>G2</td><td class="point">41</td></tr>
+                        <tr><td>G3</td><td class="point">26</td></tr>
+                        <tr><td>G4</td><td class="point">32</td></tr>
+                        <tr><td>G5</td><td class="point">20</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                    </tfoot>
+                </table>
+            </article>
+
+            <!-- Sophomore -->
+            <article class="stat-card">
+                <h3>Sophomore Year</h3>
+                <table class="score-table">
+                    <tbody>
+                        <tr><td>G1</td><td class="point">17</td></tr>
+                        <tr><td>G2</td><td class="point">28</td></tr>
+                        <tr><td>G3</td><td class="point">22</td></tr>
+                        <tr><td>G4</td><td class="point">33</td></tr>
+                        <tr><td>G5</td><td class="point">24</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                    </tfoot>
+                </table>
+            </article>
+
+            <!-- Junior -->
+            <article class="stat-card">
+                <h3>Junior Year</h3>
+                <table class="score-table">
+                    <tbody>
+                        <tr><td>G1</td><td class="point">19</td></tr>
+                        <tr><td>G2</td><td class="point">30</td></tr>
+                        <tr><td>G3</td><td class="point">16</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="highlight-row"><td>PPG</td><td class="ppg">-</td></tr>
+                    </tfoot>
+                </table>
+            </article>
+
+        </div>
+
+        <div class="career-summary">
+            <h3 class="bebas-font">🏆 Career Total Summary</h3>
+            <p>
+                Total Average PPG: 
+                <span id="total-career-ppg" class="ppg-highlight">-</span>
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <p>&copy; 2026 Thanyathep Hankla</p>
+</footer>
 
 </body>
 </html>
