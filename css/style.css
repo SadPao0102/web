@@ -1,20 +1,20 @@
 /* ล็อกความสูง Navbar ให้ตายตัว */
 .main-navbar-wrapper {
-    position: fixed;
+    position: fixed; /* หรือ sticky */
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* กำหนดความสูงให้ชัดเจน */
+    height: 56px;    /* 1. ล็อกความสูงให้แน่นอน */
     z-index: 1000;
     background: #a10f1a;
+    display: flex;
+    align-items: center;
 }
 
-/* จองพื้นที่ว่างที่ body ให้เท่ากับความสูง Navbar ทันทีที่โหลด */
 body {
     margin: 0;
-    padding-top: 60px !important; /* ต้องเท่ากับ height ของ navbar */
+    padding-top: 56px !important; /* 2. จองพื้นที่ให้เท่ากับความสูง Navbar */
 }
-
 
 /* --- Navbar Content (ยุบรวมที่ซ้ำกัน) --- */
 .cv-navbar {
@@ -299,14 +299,17 @@ body {
     --red-hover: #c1121f;
     --white: #ffffff;
 }
-
 .hero-section {
-    height: calc(100vh - 70px);
+    /* เปลี่ยนจาก height เป็น min-height และใช้ค่าที่แน่นอน */
+    min-height: 600px; 
+    height: 90vh; /* ใช้ vh เพื่อความสวยงามแต่มี min-height สำรอง */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10%;
     background: linear-gradient(135deg, #ffffff 60%, var(--red-main) 40%);
+    /* ป้องกันเนื้อหาขยับตอนโหลด */
+    contain: layout; 
 }
 
 .hero-container {
@@ -327,9 +330,11 @@ body {
 
 .hero-text h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(3rem, 8vw, 5.5rem); /* ปรับขนาดตามหน้าจออัตโนมัติ */
-    line-height: 1;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1; /* ปรับให้มากกว่า 1 เล็กน้อยเพื่อความปลอดภัย */
     color: #1a1a1a;
+    /* ป้องกันการเปลี่ยนบรรทัดกะทันหัน */
+    overflow-wrap: break-word;
 }
 
 .highlight {
@@ -365,7 +370,8 @@ body {
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    transition: all 0.3s ease;
+    /* ระบุเฉพาะสิ่งที่เปลี่ยนจริง */
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -404,12 +410,15 @@ body {
 }
 
 .hero-img-wrapper img {
-    width: 100%;
-    max-width: 420px;
+    width: 420px; /* ระบุตัวเลขให้ตรงกับ HTML */
+    height: 420px; /* ระบุตัวเลขให้ตรงกับ HTML */
+    max-width: 100%;
+    aspect-ratio: 1 / 1; /* สำคัญมาก: ช่วยจองที่ว่างรูปจัตุรัสไว้ก่อนรูปมา */
     border-radius: 25px;
     box-shadow: 25px 25px 0px rgba(255,255,255,0.15);
     display: block;
-    transition: 0.5s ease;
+    /* เปลี่ยนจาก transition: 0.5s (ซึ่งรวมทุกอย่าง) เป็นเฉพาะ transform */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-img-wrapper:hover img {
