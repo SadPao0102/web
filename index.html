@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="หน้าแรก - ธัญเทพ หาญกล้า นักศึกษา KMITL">
     <title>Home | Thanyathep Hankla</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/home.css">
+    </noscript>
+
+    <style>
+        .hero-img-wrapper img { width: 100%; max-width: 400px; height: auto; aspect-ratio: 1/1; background: #eee; border-radius: 50%; }
+        .hero-section { min-height: 80vh; display: flex; align-items: center; }
+    </style>
 </head>
 <body>
 
@@ -28,11 +39,10 @@
             <div class="hero-text">
                 <h2>Welcome to my world</h2>
                 <h1>I'm <span class="highlight">Thanyathep</span></h1>
-                <p class="typing" id="typewriter"></p>
+                <p class="typing" id="typewriter" style="min-height: 1.5em;"></p>
                 
                 <div class="btn-group">
                     <a href="cv.html" class="btn btn-red">About Me</a>
-                    
                     <div class="hero-dropdown">
                         <button class="btn btn-outline dropbtn">View Stats ▼</button>
                         <div class="hero-dropdown-content">
@@ -44,7 +54,11 @@
             </div>
 
             <div class="hero-img-wrapper">
-                <img src="image/S__2646043.webp" alt="Thanyathep Hankla" loading="lazy">
+                <img src="image/S__2646043.webp" 
+                     alt="Thanyathep Hankla" 
+                     width="400" 
+                     height="400" 
+                     fetchpriority="high">
             </div>
         </div>
     </section>
@@ -53,6 +67,6 @@
         <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
     </footer>
 
-    <script src="js/home.js"></script>
+    <script src="js/home.js" defer></script>
 </body>
 </html>
