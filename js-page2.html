@@ -2,28 +2,55 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- 🔥 สำคัญมาก -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Profile | Pink Edition</title>
-    <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="css/stats-pink.css"> 
+
+    <!-- ✅ SEO -->
+    <title>KhaeSad Player Stats | Thanyathep Hankla</title>
+    <meta name="description" content="สถิติการเล่นบาสเกตบอลของ Thanyathep Hankla พร้อมค่าเฉลี่ย PPG และข้อมูลแต่ละปี">
+    <meta name="author" content="Thanyathep Hankla">
+
+    <!-- ✅ Performance (font โหลดเร็ว) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stats-pink.css">
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body class="pink-theme-body">
 
-    <nav class="cv-navbar">
-        <a href="index.html">🏠 Home</a>
-        <a href="cv.html">👤 About</a>
-        <a href="js-page.html">🏀 Chalke Game Stats</a>
-        <a href="js-page2.html" class="cv-active">🏀 KhaeSad Game Stats</a>
-    </nav>
+    <!-- ✅ ใช้ semantic -->
+    <header>
+        <nav class="cv-navbar">
+            <a href="index.html">🏠 Home</a>
+            <a href="cv.html">👤 About</a>
+            <a href="js-page.html">🏀 Chalke Game Stats</a>
+            <a href="js-page2.html" class="cv-active" aria-current="page">🏀 KhaeSad Game Stats</a>
+        </nav>
+    </header>
 
-    <div class="pink-container">
-        <header class="pink-profile-card">
+    <main class="pink-container">
+
+        <section class="pink-profile-card">
             <h1 class="pink-main-title">🏀 Player Profile</h1>
+
             <div class="pink-profile-flex">
                 <div class="pink-img-box">
-                    <img src="image/S__2768900.webp" alt="Player Profile" class="pink-img">
+                    <!-- ✅ เพิ่ม lazy + alt -->
+                    <img src="image/S__2768900.webp" 
+                         alt="รูปโปรไฟล์นักบาส Thanyathep" 
+                         class="pink-img"
+                         loading="lazy"
+                         width="250"
+                         height="250">
                 </div>
+
                 <div class="pink-details">
                     <p><strong>Name:</strong> Thanyathep Hankla</p>
                     <p><strong>No:</strong> 6</p>
@@ -31,22 +58,30 @@
                     <p><strong>Position:</strong> G-F</p>
                 </div>
             </div>
-        </header>
+        </section>
 
         <section class="pink-stats-section">
             <h2 class="pink-section-title">📊 KhaeSad Stats</h2>
 
             <div class="pink-button-group">
-                <button onclick="calcPinkPPG()" class="btn-pink-calc" aria-label="คำนวณคะแนนเฉลี่ย">💖 Calculate PPG</button>
-                <button onclick="resetPinkPPG()" class="btn-pink-reset" aria-label="ล้างข้อมูลสถิติ">Reset</button>
+                <!-- ✅ เพิ่ม type ป้องกัน bug -->
+                <button type="button" onclick="calcPinkPPG()" class="btn-pink-calc">
+                    💖 Calculate PPG
+                </button>
+
+                <button type="button" onclick="resetPinkPPG()" class="btn-pink-reset">
+                    Reset
+                </button>
             </div>
 
             <div class="pink-grid">
+
+                <!-- ⭐ CARD 1 -->
                 <div class="pink-stat-card">
                     <h3>Freshman Year</h3>
                     <table class="pink-table">
                         <thead>
-                            <tr><th>Game</th><th>Points</th></tr>
+                            <tr><th scope="col">Game</th><th scope="col">Points</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>G1</td><td class="pink-pt">8</td></tr>
@@ -54,16 +89,20 @@
                             <tr><td>G3</td><td class="pink-pt">15</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                            <tr class="pink-res-row">
+                                <td>PPG</td>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
 
+                <!-- ⭐ CARD 2 -->
                 <div class="pink-stat-card">
                     <h3>Sophomore Year</h3>
                     <table class="pink-table">
                         <thead>
-                            <tr><th>Game</th><th>Points</th></tr>
+                            <tr><th scope="col">Game</th><th scope="col">Points</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>G1</td><td class="pink-pt">36</td></tr>
@@ -73,16 +112,20 @@
                             <tr><td>G5</td><td class="pink-pt">14</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                            <tr class="pink-res-row">
+                                <td>PPG</td>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
 
+                <!-- ⭐ CARD 3 -->
                 <div class="pink-stat-card">
                     <h3>Junior Year</h3>
                     <table class="pink-table">
                         <thead>
-                            <tr><th>Game</th><th>Points</th></tr>
+                            <tr><th scope="col">Game</th><th scope="col">Points</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>G1</td><td class="pink-pt">20</td></tr>
@@ -92,19 +135,31 @@
                             <tr><td>G5</td><td class="pink-pt">15</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr class="pink-res-row"><td>PPG</td><td class="pink-ppg-val">-</td></tr>
+                            <tr class="pink-res-row">
+                                <td>PPG</td>
+                                <td class="pink-ppg-val">-</td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>
-            </div> <div class="pink-summary-container">
+
+            </div>
+
+            <!-- ✅ summary -->
+            <div class="pink-summary-container">
                 <div class="pink-summary-box">
                     <h3 class="pink-summary-title">🏆 Career Summary</h3>
-                    <p>Total Average PPG: <span id="career-ppg-display" class="pink-highlight-total">-</span></p>
+                    <p>Total Average PPG: 
+                        <span id="career-ppg-display" class="pink-highlight-total">-</span>
+                    </p>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <script src="js/stats-pink.js"></script>
+        </section>
+    </main>
+
+    <!-- ✅ defer สำคัญมาก -->
+    <script src="js/stats-pink.js" defer></script>
+
 </body>
 </html>
