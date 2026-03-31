@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KhaeSad Stats | Thanyathep Hankla</title>
-    <meta name="description" content="สถิติการเล่นบาสเกตบอลทีม KhaeSad ของ Thanyathep Hankla พร้อมระบบคำนวณ PPG อัตโนมัติ">
+    <meta name="description" content="สถิติการเล่นบาสเกตบอลทีม KhaeSad ของ Thanyathep Hankla">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" as="image" href="image/S__2768900.webp" fetchpriority="high">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/stats-pink.js" defer></script>
 </head>
 
 <body class="pink-theme-body">
@@ -30,10 +32,12 @@
             <div class="pink-profile-flex">
                 <div class="pink-img-box">
                     <img src="image/S__2768900.webp" 
-                         alt="Thanyathep KhaeSad Profile" 
+                         alt="Thanyathep Profile" 
                          class="pink-img"
                          width="250" height="250"
-                         fetchpriority="high"> </div>
+                         fetchpriority="high"
+                         decoding="async">
+                </div>
                 <div class="pink-details">
                     <p><strong>Name:</strong> Thanyathep Hankla</p>
                     <p><strong>No:</strong> 6</p>
@@ -120,9 +124,7 @@
             <aside class="pink-summary-container">
                 <div class="pink-summary-box">
                     <h3 class="pink-summary-title bebas-font">🏆 Career Summary</h3>
-                    <p>Total Average PPG: 
-                        <span id="career-ppg-display" class="pink-highlight-total">-</span>
-                    </p>
+                    <p>Total Average PPG: <span id="career-ppg-display" class="pink-highlight-total">-</span></p>
                 </div>
             </aside>
         </section>
@@ -131,5 +133,7 @@
     <footer class="main-footer">
         <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
     </footer>
+
+    <script src="js/stats-pink.js" defer></script>
 </body>
 </html>

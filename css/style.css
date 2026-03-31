@@ -566,8 +566,7 @@ body {
     background: #ffffff;
     border-radius: 30px;
     padding: 40px;
-    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
-    border: 2px solid #ffdae0;
+box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2); /* ลดความฟุ้ง */    border: 2px solid #ffdae0;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -743,9 +742,9 @@ body {
 
 /* 3. ปรับปรุงการเรนเดอร์รูปภาพโปรไฟล์ */
 .pink-img {
-    /* ...โค้ดเดิมของคุณ... */
-    aspect-ratio: 1 / 1; /* ช่วยให้เบราว์เซอร์จองพื้นที่รูปภาพไว้ก่อนโหลดเสร็จ ลดค่า CLS */
-    content-visibility: auto; 
+    /* เพิ่มประสิทธิภาพการวาดรูป */
+    will-change: transform;
+    transform: translateZ(0); 
 }
 
 /* 4. แก้ไขเรื่อง Contrast ของตัวเลข PPG ในตาราง */
