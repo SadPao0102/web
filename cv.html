@@ -11,7 +11,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
     <script src="js/script.js" defer></script>
 </head>
@@ -33,9 +34,9 @@
             <img src="image/S__2646043.webp" 
                  class="cv-profile-img" 
                  alt="รูปโปรไฟล์ของ ธัญเทพ หาญกล้า" 
-                 loading="lazy"
                  width="200" 
-                 height="200">
+                 height="200"
+                 fetchpriority="high">
                  
             <div class="cv-info">
                 <p><strong>ชื่อ:</strong> ธัญเทพ หาญกล้า (Thanyathep Hankla)</p>
@@ -67,9 +68,10 @@
         <p>Email: <a href="mailto:thanyathep.hankla@email.com">thanyathep.hankla@email.com</a></p>
         <p>Tel: <a href="tel:0928218998">092-821-8998</a></p>
     </footer>
+
     <footer style="text-align: center; padding: 20px; color: #555; font-size: 0.9rem;">
-<p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
-</footer>
+        <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
+    </footer>
 
 </body>
 </html>
