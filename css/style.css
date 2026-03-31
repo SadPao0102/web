@@ -692,9 +692,8 @@ body {
 
 
 .pink-res-row {
-    background: #fff0f3;
-    font-weight: bold;
-    color: #c9184a;
+    background: #ffd6dc !important; /* ชมพูที่เข้มขึ้นเล็กน้อยเพื่อให้ Contrast ผ่านเกณฑ์ */
+    color: #8c0d16 !important; /* สีตัวอักษรที่เข้มขึ้น */
 }
 
 /* Responsive */
@@ -728,4 +727,29 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #c9184a; /* สีชมพูที่เข้มกว่าปกติเพื่อให้อ่านง่าย (Pass Accessibility) */
+}
+
+/* 1. บังคับการแสดงผลฟอนต์ทันทีเพื่อคะแนน Speed Index */
+* {
+    font-display: swap;
+}
+
+/* 2. เพิ่มสถานะ Focus ให้ปุ่มเพื่อคะแนน Accessibility 100 เต็ม */
+.btn-pink-calc:focus, 
+.btn-pink-reset:focus {
+    outline: 3px solid #ff4d6d;
+    outline-offset: 2px;
+}
+
+/* 3. ปรับปรุงการเรนเดอร์รูปภาพโปรไฟล์ */
+.pink-img {
+    /* ...โค้ดเดิมของคุณ... */
+    aspect-ratio: 1 / 1; /* ช่วยให้เบราว์เซอร์จองพื้นที่รูปภาพไว้ก่อนโหลดเสร็จ ลดค่า CLS */
+    content-visibility: auto; 
+}
+
+/* 4. แก้ไขเรื่อง Contrast ของตัวเลข PPG ในตาราง */
+.pink-ppg-val {
+    font-weight: 700;
+    color: #c9184a; /* ใช้สีชมพูเข้มแบบเดียวกับ Career Summary */
 }
