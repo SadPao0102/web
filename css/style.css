@@ -1,6 +1,8 @@
+* {
+    font-family: 'Montserrat', 'Kanit', sans-serif !important;
+}
 body {
     margin: 0;
-    font-family: 'Montserrat', 'Kanit', sans-serif;    background: #f1f1f1;
     color: #333;
     font-size: 20px;
 }
@@ -519,8 +521,7 @@ td:hover {
 
 .pink-main-title {
     color: #ff4d6d;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
+    font-family: 'Montserrat', 'Kanit', sans-serif;    font-size: 3rem;
     margin-bottom: 25px;
 }
 
