@@ -376,11 +376,7 @@
     color: white;
     border: 2px solid var(--red-main);
 }
-.btn-pink {
-    background: pink;
-    color: white;
-    border: 2px solid #ff4d6d;
-}
+
 .btn-black {
     background: black;
     color: white;
