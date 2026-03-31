@@ -1,35 +1,36 @@
 function calcPinkPPG() {
-    const years = ['.pink-tbody-y1', '.pink-tbody-y2', '.pink-tbody-y3'];
-    let totalAllPoints = 0;
-    let totalAllGames = 0;
+    const tbodies = document.querySelectorAll(
+        '.pink-tbody-y1, .pink-tbody-y2, .pink-tbody-y3'
+    );
 
-    years.forEach(selector => {
-        const tbody = document.querySelector(selector);
-        if (!tbody) return;
+    let totalPoints = 0;
+    let totalGames = 0;
 
-        const pointsCells = tbody.querySelectorAll('.pink-pt');
-        let yearTotal = 0;
-        let yearGames = pointsCells.length;
+    tbodies.forEach(tbody => {
+        const cells = tbody.querySelectorAll('.pink-pt');
 
-        pointsCells.forEach(cell => {
-            yearTotal += parseInt(cell.textContent) || 0;
-        });
+        let sum = 0;
+        const count = cells.length;
 
-        // แสดงผล PPG ของแต่ละปี
-        const ppg = yearGames > 0 ? (yearTotal / yearGames).toFixed(1) : 0;
-        const ppgDisplay = tbody.closest('table').querySelector('.pink-ppg-val');
-        ppgDisplay.textContent = ppg;
+        for (let i = 0; i < count; i++) {
+            sum += Number(cells[i].textContent) || 0;
+        }
 
-        totalAllPoints += yearTotal;
-        totalAllGames += yearGames;
+        const ppg = count ? (sum / count).toFixed(1) : '-';
+        const output = tbody.closest('table').querySelector('.pink-ppg-val');
+        output.textContent = ppg;
+
+        totalPoints += sum;
+        totalGames += count;
     });
 
-    // สรุปรวมอาชีพ
-    const careerPPG = totalAllGames > 0 ? (totalAllPoints / totalAllGames).toFixed(2) : 0;
-    document.getElementById('career-ppg-display').textContent = careerPPG;
+    document.getElementById('career-ppg-display').textContent =
+        totalGames ? (totalPoints / totalGames).toFixed(2) : '-';
 }
 
 function resetPinkPPG() {
-    document.querySelectorAll('.pink-ppg-val').forEach(el => el.textContent = '-');
+    document.querySelectorAll('.pink-ppg-val')
+        .forEach(el => (el.textContent = '-'));
+
     document.getElementById('career-ppg-display').textContent = '-';
 }
