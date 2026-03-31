@@ -13,6 +13,7 @@ body {
     padding: 20px;
 }
 
+
 /* Profile Card */
 .card {
     background: linear-gradient(135deg, #a10f1a, #a10f1a);
@@ -373,6 +374,81 @@ td:hover {
 .hero-img-wrapper:hover img {
     transform: translate(-10px, -10px);
     box-shadow: 35px 35px 0px rgba(255,255,255,0.2);
+}
+.hero-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* ปรับแต่งปุ่ม Button ให้หน้าตาเหมือนปุ่มเดิม */
+.hero-dropdown .dropbtn {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: 2px solid #a10f1a; /* สีแดงเดียวกับธีม */
+    background: transparent;
+    color: #a10f1a;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* กล่องรายการเมนูที่ซ่อนอยู่ */
+.hero-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-radius: 15px;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(161, 15, 26, 0.1);
+}
+
+/* ลิงก์ด้านในเมนู */
+.hero-dropdown-content a {
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    text-align: left;
+}
+
+/* เมื่อเอาเมาส์ไปวางที่ตัวเลือก */
+.hero-dropdown-content a:hover {
+    background-color: #a10f1a;
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+/* คำสั่งแสดงเมนูเมื่อเอาเมาส์ไปวางที่ปุ่ม */
+.hero-dropdown:hover .hero-dropdown-content {
+    display: block;
+    animation: slideUp 0.4s ease;
+}
+
+/* เอฟเฟกต์ปุ่มหลักเมื่อ Hover */
+.hero-dropdown:hover .dropbtn {
+    background: #a10f1a;
+    color: white;
+}
+
+/* Animation */
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 /* Responsive */
