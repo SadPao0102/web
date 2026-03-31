@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10px;    /* 1. ล็อกความสูงให้แน่นอน */
+    height: 60px;    /* 1. ล็อกความสูงให้แน่นอน */
     z-index: 1000;
     background: #a10f1a;
     display: flex;
@@ -13,7 +13,7 @@
 
 body {
     margin: 0;
-    padding-top: 10px !important; /* 2. จองพื้นที่ให้เท่ากับความสูง Navbar */
+    padding-top: 60px !important; /* 2. จองพื้นที่ให้เท่ากับความสูง Navbar */
 }
 
 /* --- Navbar Content (ยุบรวมที่ซ้ำกัน) --- */
@@ -47,12 +47,14 @@ body {
 
 /* --- Responsive Menu --- */
 @media (max-width: 600px) {
+    .main-navbar-wrapper {
+        height: 60px; /* ล็อกความสูงให้เท่ากับที่ตั้งไว้ใน Body padding-top */
+    }
     .cv-navbar {
         gap: 4px;
-    }
-    .cv-navbar a {
-        font-size: 13px;
-        padding: 5px 10px;
+        height: 100%; /* ให้เนื้อหาข้างในสูงเต็มแถบ */
+        flex-wrap: nowrap; /* ป้องกันเมนูตกบรรทัด ซึ่งจะทำให้หน้าเด้ง */
+        overflow-x: auto; /* ถ้าเมนูยาวเกินไป ให้เลื่อนซ้ายขวาได้แทนการตกบรรทัด */
     }
 }
 
