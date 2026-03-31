@@ -375,71 +375,92 @@ td:hover {
     transform: translate(-10px, -10px);
     box-shadow: 35px 35px 0px rgba(255,255,255,0.2);
 }
+/* Container หลัก */
 .hero-dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* ปรับแต่งปุ่ม Button ให้หน้าตาเหมือนปุ่มเดิม */
+/* ปุ่มกด */
 .hero-dropdown .dropbtn {
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    outline: none;
-    border: 2px solid #a10f1a; /* สีแดงเดียวกับธีม */
+    border: 2px solid #a10f1a;
     background: transparent;
     color: #a10f1a;
     padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-/* กล่องรายการเมนูที่ซ่อนอยู่ */
+/* ✅ หัวใจสำคัญ: กล่องเมนู 
+   เพิ่ม padding-top: 10px เพื่อให้มีพื้นที่ "สะพาน" เชื่อมระหว่างปุ่มกับเมนู 
+   เมาส์จะได้ไม่หลุดระหว่างทาง
+*/
 .hero-dropdown-content {
     display: none;
     position: absolute;
     background-color: #ffffff;
     min-width: 200px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
     z-index: 100;
-    border-radius: 15px;
-    margin-top: 10px;
-    overflow: hidden;
+    border-radius: 12px;
+    top: 100%; /* วางจ่อไว้ใต้ปุ่มพอดี */
+    left: 0;
+    margin-top: 0; /* เอา margin ออกแล้วใช้ช่องว่างข้างในแทน */
     border: 1px solid rgba(161, 15, 26, 0.1);
+    overflow: hidden;
 }
 
-/* ลิงก์ด้านในเมนู */
-.hero-dropdown-content a {
-    color: #333;
-    padding: 15px 20px;
-    text-decoration: none;
+/* เพิ่มพื้นที่ Safe Zone ให้เมาส์เลื่อนผ่านได้ไม่หาย */
+.hero-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px; /* สร้างสะพานล่องหนหนา 15px */
+    display: none;
+}
+
+.hero-dropdown:hover::after {
     display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    transition: 0.3s;
-    text-align: left;
 }
 
-/* เมื่อเอาเมาส์ไปวางที่ตัวเลือก */
-.hero-dropdown-content a:hover {
-    background-color: #a10f1a;
-    color: #ffffff;
-    padding-left: 25px;
-}
-
-/* คำสั่งแสดงเมนูเมื่อเอาเมาส์ไปวางที่ปุ่ม */
+/* แสดงเมนูเมื่อ Hover */
 .hero-dropdown:hover .hero-dropdown-content {
     display: block;
-    animation: slideUp 0.4s ease;
+    animation: slideUp 0.3s ease-out;
 }
 
-/* เอฟเฟกต์ปุ่มหลักเมื่อ Hover */
 .hero-dropdown:hover .dropbtn {
     background: #a10f1a;
     color: white;
 }
 
-/* Animation */
+/* รายการเมนูข้างใน */
+.hero-dropdown-content a {
+    color: #333;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hero-dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.hero-dropdown-content a:hover {
+    background-color: #a10f1a;
+    color: #ffffff !important;
+    padding-left: 30px;
+}
+
+/* Animation ให้ดูพรีเมียม */
 @keyframes slideUp {
     from { 
         opacity: 0; 
