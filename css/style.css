@@ -1,22 +1,19 @@
 body {
     margin: 0;
+    /* 1. ต้องใส่ Padding-top ให้เท่ากับความสูงของ Navbar */
+    padding-top: 55px !important; 
     background: #f4f4f4;
-    color: #333;
-    font-family: 'Kanit', 'Montserrat', sans-serif;
-    /* จองพื้นที่ด้านบนให้ Navbar เพื่อป้องกัน Layout Shift (CLS) */
-    padding-top: 60px; 
 }
 
-/* --- Navbar Wrapper (ล็อกตำแหน่งด้านบน) --- */
 .main-navbar-wrapper {
     background: #a10f1a;
     width: 100%;
-    position: fixed; /* ใช้ fixed จะนิ่งกว่า sticky สำหรับคะแนน CLS */
+    position: fixed; /* ล็อกไว้ด้านบน */
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: 55px; /* ล็อกความสูงให้แน่นอน */
+    /* 2. ล็อกความสูงให้แน่นอน */
+    height: 55px; 
     display: flex;
     align-items: center;
 }
