@@ -799,161 +799,192 @@
     background-color: #555;
     border-radius: 4px;
 }
-/* สำหรับมือถือขนาดเล็ก */
-@media (max-width: 480px) {
-    .cv-navbar1 a {
-        padding: 5px 10px;
-        font-size: 13px;
-    }
+:root {
+    --nav-height: 70px;
+    --red-main: #a10f1a;
+    --gold: #ffcc00;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- 2. Layout สำหรับหน้าเกมพูล --- */
 .pool-page {
     margin: 0;
+    padding: 0;
     background: radial-gradient(circle, #1a1a1a, #000);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* เปลี่ยนจาก center เป็น column เพื่อให้เนื้อหาไหลลงมา */
     align-items: center;
-    height: 100vh;
-    margin-top: 70px;
+    /* สำคัญ: เว้นที่ว่างด้านบนให้ Header เพื่อไม่ให้โดนบัง */
+    padding-top: calc(var(--nav-height) + 20px) !important;
+    font-family: 'Kanit', Arial, sans-serif;
 }
 
-
-
+/* --- 3. Game Container --- */
 .game-container {
+    width: 95%;
+    max-width: 1000px;
     text-align: center;
     color: white;
-    font-family: Arial;
 }
 
+.game-container h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+/* --- 4. HUD (Heads-Up Display) --- */
 .hud {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-/* --- ส่วนคำแนะนำการเล่น --- */
-.instructions {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    color: white;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.instructions h3 {
-    text-align: center;
-    color: #ffcc00;
-    margin-bottom: 20px;
-    font-family: 'Kanit', sans-serif;
-}
-
-.instruction-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.inst-card {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 15px;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
     border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.inst-card:hover {
-    transform: translateY(-5px);
-    background: rgba(0, 0, 0, 0.5);
+.hud span {
+    color: var(--gold);
+    font-weight: bold;
 }
 
-.inst-card .icon {
-    font-size: 2rem;
+/* --- 5. Canvas & Table Styling --- */
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    /* ล็อกสัดส่วนเพื่อ CLS เป็น 0 */
+    aspect-ratio: 900 / 450; 
+    background: #2e7d32;
+    border: 12px solid #5a3e1b;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    overflow: hidden;
+    touch-action: none;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
     display: block;
-    margin-bottom: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
 }
 
-.inst-card h4 {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-.inst-card p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #ddd;
-    font-weight: 300;
-}
-
-/* ปุ่ม Reset แบบใหม่ */
+/* --- 6. Controls & Buttons --- */
 .btn-reset {
-    background: #a10f1a;
+    background: var(--red-main);
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     font-size: 1.1rem;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-    font-family: 'Kanit', sans-serif;
-    margin: 20px 0;
+    font-weight: bold;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(161, 15, 26, 0.3);
 }
 
 .btn-reset:hover {
     background: #e63946;
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+    transform: scale(1.05);
 }
 
-/* ปรับแต่ง Canvas ให้ลื่นไหลบนมือถือ */
-.canvas-wrapper {
-    overflow: hidden;
-    touch-action: none;
-    border: 8px solid #5d4037;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background: #2e7d32;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-canvas {
-    width: 95vw;
-    max-width: 900px;
-    background: #0b6623;
-    border: 18px solid #5a3e1b;
+/* --- 7. Instructions Card (Desktop 3 Columns) --- */
+.instructions {
+    margin-top: 20px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
-    box-shadow:
-        inset 0 0 40px rgba(0,0,0,0.9),
-        0 10px 40px rgba(0,0,0,0.9);
-        touch-action: none; /* ปิดการซูมและเลื่อนหน้าจอด้วยนิ้วบนตัวเกม */
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 40px;
 }
 
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    background: gold;
-    border-radius: 10px;
-    font-weight: bold;
-display: block;
-    max-width: 100%;
-    height: auto; /* รักษา Aspect Ratio */
+.instructions h3 {
+    color: var(--gold);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
 }
 
-/* Responsive สำหรับมือถือ */
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์บน Desktop */
+    gap: 20px;
+}
+
+.inst-card {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.inst-card:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 0, 0, 0.6);
+    border-color: var(--red-main);
+}
+
+.inst-card .icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.inst-card h4 {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.inst-card p {
+    font-size: 0.9rem;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+/* --- 8. Responsive Design --- */
+
+/* สำหรับ Tablet & Mobile */
 @media (max-width: 768px) {
-    .instruction-grid {
-        grid-template-columns: 1fr; /* เปลี่ยนเป็นแนวตั้งบนมือถือ */
+    .pool-page {
+        padding-top: 90px !important;
     }
-    
+
+    .instruction-grid {
+        grid-template-columns: 1fr; /* ยุบเหลือ 1 คอลัมน์ */
+    }
+
     .hud {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .canvas-wrapper {
+        border-width: 8px;
+    }
+}
+
+/* สำหรับมือถือขนาดเล็กมาก */
+@media (max-width: 480px) {
+    .cv-navbar a {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .game-container h1 {
+        font-size: 1.8rem;
     }
 }
