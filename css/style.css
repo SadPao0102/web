@@ -18,25 +18,15 @@ body {
 
 /* --- Navbar Content (ยุบรวมที่ซ้ำกัน) --- */
 .cv-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 8px;
-    contain: content; /* ช่วยเรื่อง Performance */
+    gap: 20px;          /* เพิ่มจาก 8px เป็น 20px เพื่อให้ดูไม่เล็กจนเกินไปบน Desktop */
+    max-width: 1200px;  /* ขยายความกว้างสูงสุดให้ดูเต็มตาขึ้น */
+    /* ลบ transition: all ออก แล้วระบุเฉพาะจุดเพื่อ Performance */
+    transition: background-color 0.2s ease, color 0.2s ease; 
 }
 
 .cv-navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    font-size: 15px; 
-    font-weight: 500;
-    white-space: nowrap;
+    font-size: 16px;    /* ขยายจาก 15px ให้ชัดเจนขึ้น */
+    padding: 8px 16px;
 }
 
 .cv-navbar a:hover,
