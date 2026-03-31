@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 56px;    /* 1. ล็อกความสูงให้แน่นอน */
+    height: 300px;    /* 1. ล็อกความสูงให้แน่นอน */
     z-index: 1000;
     background: #a10f1a;
     display: flex;
@@ -13,7 +13,7 @@
 
 body {
     margin: 0;
-    padding-top: 56px !important; /* 2. จองพื้นที่ให้เท่ากับความสูง Navbar */
+    padding-top: 300px !important; /* 2. จองพื้นที่ให้เท่ากับความสูง Navbar */
 }
 
 /* --- Navbar Content (ยุบรวมที่ซ้ำกัน) --- */
