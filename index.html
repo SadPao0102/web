@@ -8,9 +8,11 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=Montserrat:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-navbar-wrapper">
@@ -20,7 +22,6 @@
             <a href="js-page.html">🏀 Chalke Stats</a>
             <a href="js-page2.html">🏀 KhaeSad Stats</a>
             <a href="game.html"> 🎱 Play Pool</a>
-
         </nav>
     </header>
 
@@ -35,7 +36,6 @@
                     <div class="btn-group" style="display: flex; gap: 15px;">
                         <a href="cv.html" class="btn btn-red">About Me</a>
                         <a href="game.html" class="btn btn-black">Play Pool</a>
-
                         <div class="hero-dropdown">
                             <button class="btn btn-outline dropbtn" style="cursor: pointer; background: transparent;">View Stats ▼</button>
                             <div class="hero-dropdown-content">
@@ -47,7 +47,12 @@
                 </div>
 
                 <div class="hero-img-wrapper">
-                    <img src="image/S__2646043.webp" alt="Thanyathep Hankla Profile" width="420" height="420" fetchpriority="high">
+                    <img src="image/S__2646043.webp" 
+                         alt="Thanyathep Hankla Profile" 
+                         width="420" 
+                         height="420" 
+                         fetchpriority="high" 
+                         decoding="async">
                 </div>
             </div>
         </section>
