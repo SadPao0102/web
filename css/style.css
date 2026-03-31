@@ -1,55 +1,51 @@
-/* ล็อกความสูง Navbar ให้ตายตัว */
+:root {
+    --red-main: #a10f1a;
+    --red-hover: #c1121f;
+    --white: #ffffff;
+    --nav-height-desktop: 70px;
+    --nav-height-mobile: 56px;
+}
+
+/* --- Fixed Navbar (ชุดเดียวจบทุกหน้า) --- */
 .main-navbar-wrapper {
-    position: fixed; /* หรือ sticky */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;    /* 1. ล็อกความสูงให้แน่นอน */
+    height: var(--nav-height-desktop);
+    background: var(--red-main);
     z-index: 1000;
-    background: #a10f1a;
     display: flex;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-body {
-    /* ถ้า Navbar สูง 56px ค่านี้ก็ต้องเป็น 56px !important */
-    padding-top: 80px !important; 
-}
-
-/* --- Navbar Content (ยุบรวมที่ซ้ำกัน) --- */
 .cv-navbar {
-    gap: 20px;          /* เพิ่มจาก 8px เป็น 20px เพื่อให้ดูไม่เล็กจนเกินไปบน Desktop */
-    max-width: 1200px;  /* ขยายความกว้างสูงสุดให้ดูเต็มตาขึ้น */
-    /* ลบ transition: all ออก แล้วระบุเฉพาะจุดเพื่อ Performance */
-    transition: background-color 0.2s ease, color 0.2s ease; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* เพิ่ม Gap ให้ดูพรีเมียมบน Desktop */
+    contain: content;
 }
 
 .cv-navbar a {
-    font-size: 16px;    /* ขยายจาก 15px ให้ชัดเจนขึ้น */
-    padding: 8px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 16px; 
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .cv-navbar a:hover,
 .cv-navbar a.cv-active {
     background: #ffffff;
-    color: #a10f1a;
-}
-
-/* --- Responsive Menu --- */
-@media (max-width: 600px) {
-    .main-navbar-wrapper {
-        height: 56px; /* ต้องล็อกค่านี้ให้เท่ากับบนจอคอม หรือค่าที่คุณใช้ */
-    }
-    .cv-navbar {
-        gap: 4px;
-        flex-wrap: nowrap; /* ห้ามเมนูตกบรรทัดเด็ดขาด */
-        overflow-x: auto;  /* ถ้าเมนูยาวเกินให้ไถซ้ายขวาได้แทน */
-    }
-    .cv-navbar a {
-        font-size: 13px;
-        padding: 5px 8px;
-        white-space: nowrap; /* ห้ามชื่อเมนูตัดบรรทัด */
-    }
+    color: var(--red-main);
 }
 
     .container {
@@ -290,22 +286,24 @@ body {
 
 
 /* Home Page Specific Styles */
-:root {
-    --red-main: #a10f1a;
-    --red-hover: #c1121f;
-    --white: #ffffff;
-}
+/* --- Hero Section --- */
 .hero-section {
-    /* เปลี่ยนจาก height เป็น min-height และใช้ค่าที่แน่นอน */
-    min-height: 600px; 
-    height: 90vh; /* ใช้ vh เพื่อความสวยงามแต่มี min-height สำรอง */
+    min-height: 600px;
+    height: calc(100vh - var(--nav-height-desktop));
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10%;
     background: linear-gradient(135deg, #ffffff 60%, var(--red-main) 40%);
-    /* ป้องกันเนื้อหาขยับตอนโหลด */
-    contain: layout; 
+    contain: layout;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
 }
 
 .hero-container {
@@ -405,11 +403,49 @@ body {
     z-index: 2;
 }
 
+/* --- Image Optimization (แก้ CLS รูปภาพ) --- */
 .hero-img-wrapper img {
-    aspect-ratio: 1 / 1; /* จองพื้นที่รูปจัตุรัสไว้ */
+    aspect-ratio: 1 / 1; 
     width: 100%;
-    max-width: 420px;
+    max-width: 450px; /* ปรับให้ใหญ่ขึ้นตามที่คุณต้องการ */
     height: auto;
+    border-radius: 25px;
+    box-shadow: 25px 25px 0px rgba(255,255,255,0.15);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* --- Responsive (มือถือ) --- */
+@media (max-width: 992px) {
+    body {
+        padding-top: var(--nav-height-mobile) !important;
+    }
+    .main-navbar-wrapper {
+        height: var(--nav-height-mobile);
+    }
+    .cv-navbar {
+        gap: 5px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+    .cv-navbar a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    .hero-section {
+        background: #ffffff;
+        height: auto;
+        padding: 40px 5%;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-img-wrapper img {
+        margin: 0 auto;
+        max-width: 300px;
+    }
 }
 
 .hero-img-wrapper:hover img {
