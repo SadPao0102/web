@@ -1,56 +1,35 @@
 function calcPinkPPG() {
-    const cards = document.querySelectorAll('.pink-stat-card');
-    
-    // 1. เพิ่มตัวแปรสำหรับเก็บค่ารวม "ทุกปี"
-    let totalPointsCareer = 0;
-    let totalGamesCareer = 0;
+    const years = ['.pink-tbody-y1', '.pink-tbody-y2', '.pink-tbody-y3'];
+    let totalAllPoints = 0;
+    let totalAllGames = 0;
 
-    cards.forEach(card => {
-        const points = card.querySelectorAll('.pink-pt');
-        const display = card.querySelector('.pink-ppg-val');
-        
-        let sumYear = 0;
-        points.forEach(p => {
-            const val = parseInt(p.innerText);
-            sumYear += val;
-            
-            // สะสมค่าเพื่อใช้คำนวณค่าเฉลี่ยรวมทุกปี
-            totalPointsCareer += val;
-            totalGamesCareer++;
+    years.forEach(selector => {
+        const tbody = document.querySelector(selector);
+        if (!tbody) return;
+
+        const pointsCells = tbody.querySelectorAll('.pink-pt');
+        let yearTotal = 0;
+        let yearGames = pointsCells.length;
+
+        pointsCells.forEach(cell => {
+            yearTotal += parseInt(cell.textContent) || 0;
         });
-        
-        // คำนวณรายปี
-        const avgYear = (sumYear / points.length).toFixed(2);
-        display.innerText = avgYear;
-        display.style.fontSize = "1.3rem";
-        display.style.textShadow = "0 0 5px rgba(255, 77, 109, 0.2)";
-        display.style.color = "#ff4d6d"; // เพิ่มสีให้เห็นชัดเจน
+
+        // แสดงผล PPG ของแต่ละปี
+        const ppg = yearGames > 0 ? (yearTotal / yearGames).toFixed(1) : 0;
+        const ppgDisplay = tbody.closest('table').querySelector('.pink-ppg-val');
+        ppgDisplay.textContent = ppg;
+
+        totalAllPoints += yearTotal;
+        totalAllGames += yearGames;
     });
 
-    // 2. คำนวณค่าเฉลี่ยรวมทุกปี (Career Summary)
-    const careerDisplay = document.getElementById('career-ppg-display');
-    if (careerDisplay && totalGamesCareer > 0) {
-        const avgCareer = (totalPointsCareer / totalGamesCareer).toFixed(2);
-        careerDisplay.innerText = avgCareer;
-        
-        // เพิ่ม Animation เล็กน้อยเวลาคำนวณเสร็จ
-        careerDisplay.style.transition = "0.3s";
-        careerDisplay.style.color = "#c9184a";
-    }
+    // สรุปรวมอาชีพ
+    const careerPPG = totalAllGames > 0 ? (totalAllPoints / totalAllGames).toFixed(2) : 0;
+    document.getElementById('career-ppg-display').textContent = careerPPG;
 }
 
 function resetPinkPPG() {
-    // รีเซ็ตค่ารายปี
-    const displays = document.querySelectorAll('.pink-ppg-val');
-    displays.forEach(d => {
-        d.innerText = "-";
-        d.style.color = "inherit";
-    });
-
-    // รีเซ็ตค่ารวมทุกปี
-    const careerDisplay = document.getElementById('career-ppg-display');
-    if (careerDisplay) {
-        careerDisplay.innerText = "-";
-        careerDisplay.style.color = "inherit";
-    }
+    document.querySelectorAll('.pink-ppg-val').forEach(el => el.textContent = '-');
+    document.getElementById('career-ppg-display').textContent = '-';
 }
