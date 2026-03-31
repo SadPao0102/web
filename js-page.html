@@ -1,133 +1,205 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Player Profile</title>
-<link rel="preload" href="css/style.css" as="style">
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap" rel="stylesheet">
-<script src="js/script.js" defer></script>
-<style>
-/* 🔥 เพิ่ม effect เล็กๆ */
-.ppg {
-    transition: 0.3s;
-    font-weight: bold;
-    color: #c1121f;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalke Stats | Thanyathep Hankla</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-.btn-reset {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 18px;
-    background: #555;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-</style>
+    <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        /* ✅ เพิ่ม CSS ตรงนี้เพื่อป้องกันปัญหามือถือหาไฟล์ CSS ไม่เจอ */
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Kanit', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f4f4;
+            padding-top: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: #a10f1a;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 15px;
+        }
+
+        /* ตารางสถิติ */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .score-table th, .score-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .highlight {
+            background: #fff0f1;
+            font-weight: bold;
+        }
+
+        .ppg {
+            transition: 0.3s;
+            font-weight: 800;
+            color: #a10f1a;
+            font-size: 1.2rem;
+        }
+
+        /* ปุ่มต่างๆ */
+        .btn-calc {
+            background: #a10f1a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .btn-reset {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-<div class="container">
-
-    <header class="cv-navbar">
-    <nav class="cv-navbar">
-        <a href="index.html">🏠 Home</a>
-        <a href="cv.html" class="cv-active">👤 About</a>
-        <a href="js-page.html">🏀 Chalke Game Stats</a>
-        <a href="js-page2.html">🏀 KhaeSad Game Stats</a>
- 
-    </nav>
-</header>
+    <header class="main-navbar-wrapper">
+        <nav class="cv-navbar">
+            <a href="index.html">🏠 Home</a>
+            <a href="cv.html">👤 About</a>
+            <a href="js-page.html" class="cv-active">🏀 Chalke Stats</a>
+            <a href="js-page2.html">🏀 KhaeSad Stats</a>
+        </nav>
+    </header>
     
-    <div class="card">
-        <h1>🏀 Player Profile</h1>
-        
-        <img src="image/S__2629643.webp" 
-        width="300"
-        height="300"
-        alt="player" 
-        class="profile-img"
-        loading="lazy">
+    <div class="container">
+        <div class="card">
+            <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem;">🏀 Player Profile</h1>
+            <img src="image/S__2629643.webp" alt="player" class="profile-img" loading="lazy">
+            <div class="info">
+                <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
+                <p><strong>No:</strong> 6 | <strong>Position:</strong> G-F</p>
+                <p><strong>คณะ:</strong> SIET (Engineering)</p>
+            </div>
+        </div>
 
-        <div class="info">
-            <p><strong>ชื่อ:</strong> Thanyathep Hankla</p>
-            <p><strong>No:</strong> 6</p>
-            <p><strong>คณะ:</strong> SIET</p>
-            <p><strong>สาขา:</strong> Engineering</p>
-            <p><strong>Position:</strong> G-F</p>
+        <div class="stats">
+            <h2 class="section-title" style="text-align:center; color:#a10f1a;">📊 Chalke Games Stats</h2>
+
+            <button onclick="calculatePPG()" class="btn-calc">🔥 Calculate PPG</button>
+            <button onclick="resetPPG()" class="btn-reset">Reset</button>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Freshman Year</h3>
+                    <table class="score-table">
+                        <tr><th>Game</th><th>Point</th></tr>
+                        <tr><td>G1</td><td class="point">18</td></tr>
+                        <tr><td>G2</td><td class="point">41</td></tr>
+                        <tr><td>G3</td><td class="point">26</td></tr>
+                        <tr><td>G4</td><td class="point">32</td></tr>
+                        <tr><td>G5</td><td class="point">20</td></tr>
+                        <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
+                    </table>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Sophomore Year</h3>
+                    <table class="score-table">
+                        <tr><th>Game</th><th>Point</th></tr>
+                        <tr><td>G1</td><td class="point">17</td></tr>
+                        <tr><td>G2</td><td class="point">28</td></tr>
+                        <tr><td>G3</td><td class="point">22</td></tr>
+                        <tr><td>G4</td><td class="point">33</td></tr>
+                        <tr><td>G5</td><td class="point">24</td></tr>
+                        <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
+                    </table>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Junior Year</h3>
+                    <table class="score-table">
+                        <tr><th>Game</th><th>Point</th></tr>
+                        <tr><td>G1</td><td class="point">19</td></tr>
+                        <tr><td>G2</td><td class="point">30</td></tr>
+                        <tr><td>G3</td><td class="point">16</td></tr>
+                        <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="career-summary" style="margin-top: 30px; text-align: center; padding: 20px; background: #fff; border-radius: 15px; border: 2px solid #a10f1a;">
+                <h3 style="font-family: 'Bebas Neue'; font-size: 2rem; color: #333;">🏆 Career Total Summary</h3>
+                <p style="font-size: 1.3rem;">Total Average PPG: <span id="total-career-ppg" class="ppg">-</span></p>
+            </div>
         </div>
     </div>
 
-    <div class="stats">
-        <h2 class="section-title">📊 Chalke Games Stats</h2>
-
-        <!-- 🔥 ปุ่ม -->
-        <button onclick="calculatePPG()" class="btn-calc" aria-label="Calculate points per game">
-            🔥 Calculate PPG
-        </button>
-
-        <button onclick="resetPPG()" class="btn-reset">
-            Reset
-        </button>
-
-        <div class="stats-container">
-
-        <!-- Freshman -->
-        <div class="stat-card">
-            <h3>Freshman Year</h3>
-            <table class="score-table">
-                <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td class="point">18</td></tr>
-                <tr><td>G2</td><td class="point">41</td></tr>
-                <tr><td>G3</td><td class="point">26</td></tr>
-                <tr><td>G4</td><td class="point">32</td></tr>
-                <tr><td>G5</td><td class="point">20</td></tr>
-                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
-            </table>
-        </div>
-
-        <!-- Sophomore -->
-        <div class="stat-card">
-            <h3>Sophomore Year</h3>
-            <table class="score-table">
-                <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td class="point">17</td></tr>
-                <tr><td>G2</td><td class="point">28</td></tr>
-                <tr><td>G3</td><td class="point">22</td></tr>
-                <tr><td>G4</td><td class="point">33</td></tr>
-                <tr><td>G5</td><td class="point">24</td></tr>
-                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
-            </table>
-        </div>
-
-        <!-- Junior -->
-        <div class="stat-card">
-            <h3>Junior Year</h3>
-            <table class="score-table">
-                <tr><th>Game</th><th>Point</th></tr>
-                <tr><td>G1</td><td class="point">19</td></tr>
-                <tr><td>G2</td><td class="point">30</td></tr>
-                <tr><td>G3</td><td class="point">16</td></tr>
-                <tr class="highlight"><td>PPG</td><td class="ppg">-</td></tr>
-            </table>
-        </div>
-
-        <div class="career-summary" style="margin-top: 30px; text-align: center; padding: 20px; background: #fff; border-radius: 15px; border: 2px solid #c1121f;">
-        <h3 style="font-family: 'Bebas Neue'; font-size: 2rem; color: #333;">🏆 Career Total Summary</h3>
-        <p style="font-size: 1.5rem; font-weight: bold;">
-        Total Average PPG: <span id="total-career-ppg" class="ppg">-</span>
-        </p>
-       </div>
-
-</div>
-
-
-<footer style="text-align: center; padding: 20px; color: #555; font-size: 0.9rem;">
+    <footer style="text-align: center; padding: 30px; color: #777; font-size: 0.9rem;">
         <p>&copy; 2026 Thanyathep Hankla | Student ID: 66030243</p>
     </footer>
 </body>
