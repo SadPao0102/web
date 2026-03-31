@@ -1,16 +1,13 @@
-/* RESET */
 * {
     font-family: 'Montserrat', 'Kanit', sans-serif !important;
-    box-sizing: border-box;
 }
-
 body {
     margin: 0;
     background: #f4f4f4;
     color: #333;
 }
 
-/* ================= NAVBAR ================= */
+/* ✅ 2. Navbar */
 .main-navbar-wrapper {
     background: #a10f1a;
     width: 100%;
@@ -22,52 +19,37 @@ body {
 .cv-navbar {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    padding: 10px;
+    padding: 12px;
+    gap: 15px;
 }
 
-/* TAB STYLE */
 .cv-navbar a {
-    color: #ffffff;
-    background: transparent;
+    color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
-/* hover */
-.cv-navbar a:hover {
-    background: #c1121f;
+.cv-navbar a:hover, .cv-navbar a.cv-active {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* active tab */
-.cv-navbar a.cv-active {
-    background: #ffffff;
-    color: #a10f1a;
-    font-weight: bold;
-}
-
-/* ================= LAYOUT ================= */
+/* ✅ 3. Layout */
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
 }
 
-.cv-container {
-    max-width: 800px;
-    margin: 32px auto;
-    padding: 0 16px;
-}
-
-/* ================= FONT ================= */
 .bebas-font {
     font-family: 'Bebas Neue', cursive !important;
     font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-/* ================= PROFILE CARD ================= */
+/* ✅ 4. Profile Card (Header) */
 .card {
     background: linear-gradient(135deg, #a10f1a, #c1121f);
     color: white;
@@ -75,7 +57,7 @@ body {
     padding: 40px 20px;
     text-align: center;
     margin-bottom: 40px;
-    box-shadow: 0 10px 25px rgba(161, 15, 26, 0.3);
+    box-shadow: 0 10px 25px rgba(161, 15, 26, 0.2);
 }
 
 .profile-img {
@@ -85,15 +67,17 @@ body {
     border-radius: 50%;
     border: 4px solid white;
     margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-
-/* ================= SECTION TITLE ================= */
 .section-title {
+    margin-top: 0;
     text-align: center;
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;
     color: #a10f1a;
 }
 
-/* ================= STATS ================= */
+/* ✅ 5. Stats Grid & Cards (ตรงตามรูปที่ส่งมา) */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -104,11 +88,7 @@ body {
     background: white;
     border-radius: 15px;
     padding: 20px;
-
-    /* 🔥 เพิ่มกรอบแดง */
-    border: 3px solid #a10f1a;
-
-    box-shadow: 0 6px 15px rgba(161, 15, 26, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: 0.3s ease;
 }
 
@@ -116,7 +96,13 @@ body {
     transform: translateY(-5px);
 }
 
-/* ================= TABLE ================= */
+.stat-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+/* ✅ 6. Table Styling (ตรงตามรูป) */
 .score-table {
     width: 100%;
     border-collapse: collapse;
@@ -129,17 +115,18 @@ body {
     background: #a10f1a;
     color: white;
     padding: 10px;
+    font-weight: 600;
 }
 
 .score-table td {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/* PPG ROW */
+/* แถว PPG ไฮไลท์สีชมพูอ่อนเหมือนในรูป */
 .highlight-row {
-    background: #ffccd0;
+    background: #ffccd0 !important;
     font-weight: bold;
 }
 
@@ -147,53 +134,50 @@ body {
     color: #a10f1a;
 }
 
-/* ================= BUTTON ================= */
+/* ✅ 7. Buttons */
 .btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 30px 0;
+    display: flex;       /* ใช้ flex เพื่อจัดวางปุ่ม */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    align-items: center;     /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    gap: 10px;           /* ระยะห่างระหว่างปุ่ม (ปรับลดได้ถ้าอยากให้ติดกันมากขึ้น) */
+    margin: 30px 0;      /* ระยะห่างด้านบนและล่างของบล็อกปุ่ม */
 }
 
+/* ✅ สไตล์ปุ่ม Calculate (สีแดง) */
 .btn-calc {
     background: #a10f1a;
     color: white;
     border: none;
     padding: 12px 25px;
-    border-radius: 8px;
+    border-radius: 8px; /* ความมนตามรูป */
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(161, 15, 26, 0.3);
 }
 
-.btn-calc:hover {
-    background: #c1121f;
-    transform: scale(1.05);
-}
+.btn-calc:hover { background: #c1121f; transform: scale(1.05); }
 
 .btn-reset {
-    background: #555;
+    background: #555555; /* สีเทาตามรูป */
     color: white;
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: 0.3s;
 }
+.btn-reset:hover { background: #333333; }
 
-.btn-reset:hover {
-    background: #333;
-}
-
-/* ================= SUMMARY ================= */
+/* ✅ 8. Career Summary */
 .career-summary {
     margin-top: 40px;
     background: white;
     padding: 30px;
     border-radius: 20px;
-
-    /* 🔥 กรอบแดงชัด */
-    border: 3px solid #a10f1a;
-
+    border: 2px solid #a10f1a;
     text-align: center;
 }
 
@@ -203,45 +187,545 @@ body {
     color: #a10f1a;
 }
 
-/* ================= CV PAGE ================= */
+/* ✅ 9. Footer */
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ✅ 10. Responsive (มือถือ) */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* cv page only */
+/* cv page only */
+.cv-container {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 0 16px;
+    width: 100%;
+}
+
+/* ✅ 3. Navbar: ลายเดิม ปรับให้เสถียรขึ้น */
+.cv-navbar {
+    display: flex;
+    justify-content: center;
+    background: #a10f1a;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.cv-navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    font-size: 18px;
+}
+
+.cv-navbar a:hover {
+    background: #ffffff;
+    color: #a10f1a;
+}
+
+/* ✅ 4. Card & Section: ลายเดิมที่คงความมนและเส้นขอบแดง */
 .cv-card, .cv-section {
     background: #ffffff;
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 20px;
-
-    /* 🔥 กรอบแดง */
-    border: 3px solid #a10f1a;
-
-    box-shadow: 0 6px 15px rgba(161, 15, 26, 0.2);
+    border: 2px solid #a10f1a;
+    /* ลดความเบลอของเงาเล็กน้อยเพื่อให้ประมวลผลกราฟิกไวขึ้น */
+    box-shadow: 0 4px 12px rgba(161, 15, 26, 0.12);
 }
 
+/* ✅ 5. Profile Image: สำคัญมากต่อคะแนน CLS (หน้าจอไม่เด้ง) */
 .cv-profile-img {
-    width: 160px;
-    height: 160px;
+    width: 160px;  /* ต้องระบุให้ตรงกับใน HTML */
+    height: 160px; 
     object-fit: cover;
     border-radius: 50%;
     display: block;
-    margin: auto;
+    margin: 0 auto 15px auto;
     border: 4px solid #a10f1a;
+    transition: transform 0.3s ease;
+    background: #eee; /* ใส่สีรองรับระหว่างรอโหลดรูป */
 }
 
+.cv-profile-img:hover {
+    transform: scale(1.05);
+}
+
+.cv-info {
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* ✅ 6. Title: ลายเดิมที่มีเส้นขอบด้านข้าง */
 .cv-title {
     color: #a10f1a;
+    margin-bottom: 15px;
     border-left: 5px solid #a10f1a;
     padding-left: 10px;
+    text-align: left;
+    font-weight: 700;
 }
 
-/* ================= FOOTER ================= */
-.main-footer {
-    text-align: center;
-    padding: 40px;
-    color: #888;
+/* ✅ 7. Skill List: ลายเดิม ปรับ Flex ให้โหลดไวขึ้น */
+.cv-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
+.cv-skill-list li {
+    background: #fff5f5;
+    border: 1px solid #a10f1a;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #a10f1a;
+    font-weight: 500;
+    transition: 0.2s ease-out;
+}
+
+.cv-skill-list li:hover {
+    background: #a10f1a;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+
+/* Home Page Specific Styles */
+:root {
+    --red-main: #a10f1a;
+    --red-hover: #c1121f;
+    --white: #ffffff;
+}
+
+.hero-section {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #ffffff 60%, var(--red-main) 40%);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    color: var(--red-main);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.hero-text h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(3rem, 8vw, 5.5rem); /* ปรับขนาดตามหน้าจออัตโนมัติ */
+    line-height: 1;
+    color: #1a1a1a;
+}
+
+.highlight {
+    color: var(--red-main);
+}
+
+.hero-text .typing {
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 10px;
+    min-height: 1.6em;
+}
+
+/* Cursor Blink Animation */
+.hero-text .typing::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.btn-red {
+    background: var(--red-main);
+    color: white;
+    border: 2px solid var(--red-main);
+}
+
+.btn-outline {
+    border: 2px solid var(--red-main);
+    color: var(--red-main);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(161, 15, 26, 0.3);
+}
+
+.btn-red:hover {
+    background: var(--red-hover);
+    border-color: var(--red-hover);
+}
+
+/* Image Wrapper */
+.hero-img-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-img-wrapper img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 25px;
+    box-shadow: 25px 25px 0px rgba(255,255,255,0.15);
+    display: block;
+    transition: 0.5s ease;
+}
+
+.hero-img-wrapper:hover img {
+    transform: translate(-10px, -10px);
+    box-shadow: 35px 35px 0px rgba(255,255,255,0.2);
+}
+/* Container หลัก */
+.hero-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* ปุ่มกด */
+.hero-dropdown .dropbtn {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #a10f1a;
+    background: transparent;
+    color: #a10f1a;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* ✅ หัวใจสำคัญ: กล่องเมนู 
+   เพิ่ม padding-top: 10px เพื่อให้มีพื้นที่ "สะพาน" เชื่อมระหว่างปุ่มกับเมนู 
+   เมาส์จะได้ไม่หลุดระหว่างทาง
+*/
+.hero-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 12px;
+    top: 100%; /* วางจ่อไว้ใต้ปุ่มพอดี */
+    left: 0;
+    margin-top: 0; /* เอา margin ออกแล้วใช้ช่องว่างข้างในแทน */
+    border: 1px solid rgba(161, 15, 26, 0.1);
+    overflow: hidden;
+}
+
+/* เพิ่มพื้นที่ Safe Zone ให้เมาส์เลื่อนผ่านได้ไม่หาย */
+.hero-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px; /* สร้างสะพานล่องหนหนา 15px */
+    display: none;
+}
+
+.hero-dropdown:hover::after {
+    display: block;
+}
+
+/* แสดงเมนูเมื่อ Hover */
+.hero-dropdown:hover .hero-dropdown-content {
+    display: block;
+    animation: slideUp 0.3s ease-out;
+}
+
+.hero-dropdown:hover .dropbtn {
+    background: #a10f1a;
+    color: white;
+}
+
+/* รายการเมนูข้างใน */
+.hero-dropdown-content a {
+    color: #333;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hero-dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.hero-dropdown-content a:hover {
+    background-color: #a10f1a;
+    color: #ffffff !important;
+    padding-left: 30px;
+}
+
+/* Animation ให้ดูพรีเมียม */
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
     }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section {
+        background: #ffffff;
+        height: auto;
+        padding: 60px 5%;
+    }
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .btn-group {
+        justify-content: center;
+    }
+    .hero-img-wrapper img {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+}
+
+
+
+
+/* Pink & White Theme Specific */
+.pink-theme-body {
+    background-color: #fff5f7; /* พื้นหลังชมพูอ่อนมาก */
+    color: #4a4a4a;
+}
+
+.pink-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Profile Card */
+.pink-profile-card {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+    border: 2px solid #ffdae0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pink-main-title {
+    color: #ff4d6d;
+    font-family: 'Montserrat', 'Kanit', sans-serif;    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.pink-profile-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.pink-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* ทรงกลมเข้ากับธีมชมพู */
+    object-fit: cover;
+    border: 5px solid #ffccd5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pink-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: left;
+    color: #5f5f5f;
+    border-bottom: 1px dashed #ffccd5;
+    padding-bottom: 5px;
+}
+
+/* Stats Section */
+.pink-section-title {
+    text-align: center;
+    color: #ff4d6d;
+    margin-bottom: 30px;
+}
+
+.pink-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.btn-pink-calc {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.btn-pink-reset {
+    background: #f8f8f8; /* ใส่พื้นหลังสีเทาอ่อนมาก */
+    color: #d63384;      /* ใช้สีชมพูที่เข้มขึ้นกว่าเดิมเล็กน้อยเพื่อให้ตัดกับพื้นหลัง */
+    border: 2px solid #ff4d6d;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;   /* เพิ่มความหนาตัวอักษรช่วยให้อ่านง่ายขึ้น */
+    
+}
+
+.btn-pink-calc:hover { background: #ff758f; transform: scale(1.05); }
+.btn-pink-reset:hover { background: #ff758f; transform: scale(1.05); }
+
+
+/* Stats Cards */
+.pink-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.pink-stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #ffdae0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.pink-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.pink-table th {
+    border-bottom: 2px solid #ffccd5;
+    padding: 10px;
+    color: white;
+    background: #ff4d6d
+}
+
+.pink-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #fff0f3;
+    color: #333333; /* จากเดิมที่เป็นสีเทาจางๆ ให้ใช้สีเข้มเกือบดำ */
+}
+
+/* ปรับสีหัวข้อรองให้เข้มขึ้น */
+.pink-details p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: left;
+    color: #444444; /* ปรับจาก #5f5f5f เป็นสีที่เข้มขึ้น */
+    border-bottom: 1px dashed #ffccd5;
+    padding-bottom: 5px;
+}
+
+
+.pink-res-row {
+    background: #fff0f3;
+    font-weight: bold;
+    color: #c9184a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .pink-profile-flex { gap: 20px; }
+    .pink-main-title { font-size: 2.2rem; }
+}
+.pink-summary-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pink-summary-box {
+    background: #ffffff;
+    border: 3px solid #ff4d6d; /* ใช้สีชมพูเข้มเพื่อ Contrast ที่ดี */
+    padding: 25px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.15);
+}
+
+.pink-summary-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+.pink-highlight-total {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c9184a; /* สีชมพูที่เข้มกว่าปกติเพื่อให้อ่านง่าย (Pass Accessibility) */
 }
